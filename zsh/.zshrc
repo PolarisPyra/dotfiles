@@ -130,8 +130,6 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 eval "$(starship init zsh)"
 
-. "$HOME/.local/bin/env"
-
 # bun completions
 [ -s "/home/polaris/.bun/_bun" ] && source "/home/polaris/.bun/_bun"
 
@@ -146,3 +144,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
