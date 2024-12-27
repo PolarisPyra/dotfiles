@@ -17,7 +17,7 @@ palette = 15=#a6adc8
 background = #14161B
 foreground = #cdd6f4
 cursor-color = #f5e0dc
-selection-background = #353749
+selection-background = #353749s
 selection-foreground = #cdd6f4
 
 term = xterm-256color
@@ -27,6 +27,6 @@ font-thicken = false
 font-size = 12
 
 mouse-hide-while-typing = true
-window-decoration = truee
+window-decoration = trues
 
 
