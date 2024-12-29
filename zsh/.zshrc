@@ -1,4 +1,4 @@
-
+ZSH_TMUX_AUTOSTART=true
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -93,7 +93,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting virtualenv )
+plugins=(tmux git zsh-autosuggestions zsh-syntax-highlighting virtualenv )
 
 source $ZSH/oh-my-zsh.sh
 
