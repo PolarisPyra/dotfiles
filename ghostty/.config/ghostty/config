@@ -29,4 +29,4 @@ font-size = 12
 mouse-hide-while-typing = true
 window-decoration = true
 
-
+confirm-close-surface = false
