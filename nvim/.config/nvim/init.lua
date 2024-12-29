@@ -1,5 +1,5 @@
-require 'core.options'  -- Load general options
-require 'core.keymaps'  -- Load general keymaps
+require 'core.options' -- Load general options
+require 'core.keymaps' -- Load general keymaps
 require 'core.snippets' -- Custom code snippets
 
 -- Install package manager
@@ -29,7 +29,7 @@ local themes = {
 -- Setup plugins
 require('lazy').setup({
   require(themes[env_var_nvim_theme]),
-
+  require 'plugins.alpha',
   require 'plugins.neo-tree',
   require 'plugins.autocomplete',
   require 'plugins.treesitter',
