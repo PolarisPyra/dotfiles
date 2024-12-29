@@ -24,7 +24,6 @@ local env_var_nvim_theme = os.getenv 'NVIM_THEME' or default_color_scheme
 local themes = {
   onedark = 'plugins.themes.onedark',
   cyberdream = 'plugins.themes.cyberdream',
-
 }
 
 -- Setup plugins
@@ -37,6 +36,7 @@ require('lazy').setup({
   require 'plugins.lsp',
   require 'plugins.none-ls',
   require 'plugins.telescope',
+  require 'plugins.autopairs',
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
