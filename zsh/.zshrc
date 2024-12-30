@@ -1,4 +1,9 @@
-ZSH_TMUX_AUTOSTART=true
+if [ "$TERM_PROGRAM" != "vscode" ]
+then
+    ZSH_TMUX_AUTOSTART=true
+fi
+
+
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
