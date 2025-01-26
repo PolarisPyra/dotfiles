@@ -3,7 +3,6 @@ then
     ZSH_TMUX_AUTOSTART=true
 fi
 
-source aliases
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
