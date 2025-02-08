@@ -1,7 +1,3 @@
-if [ "$TERM_PROGRAM" != "vscode" ]
-then
-    ZSH_TMUX_AUTOSTART=true
-fi
 
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -15,11 +11,6 @@ export NVM_DIR=~/.nvm
 
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
-alias ap="source .venv/bin/activate"
-alias de="deactivate"
-alias pgl="psql postgres polaris"
-alias gdrive="rclone mount gdrive: /home/polaris/media/gdrive"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -144,13 +135,7 @@ eval "$(starship init zsh)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# pnpm
-export PNPM_HOME="/home/polaris/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 eval "$(direnv hook zsh)"
+
+export PATH="$HOME/.local/bin:$PATH"
+
