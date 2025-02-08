@@ -1,3 +1,7 @@
+if [ "$TERM_PROGRAM" != "vscode" ] && [ "$TERM_PROGRAM" != "cursor" ]; then
+    ZSH_TMUX_AUTOSTART=true
+fi
+
 
 
 export PYENV_ROOT="$HOME/.pyenv"
