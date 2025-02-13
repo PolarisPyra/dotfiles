@@ -1,5 +1,5 @@
-require 'core.options' -- Load general options
-require 'core.keymaps' -- Load general keymaps
+require 'core.options'  -- Load general options
+require 'core.keymaps'  -- Load general keymaps
 require 'core.snippets' -- Custom code snippets
 
 -- Install package manager
@@ -30,7 +30,7 @@ local themes = {
 require('lazy').setup({
   require(themes[env_var_nvim_theme]),
   require 'plugins.alpha',
-  --  require 'plugins.neo-tree',
+  require 'plugins.neo-tree',
   require 'plugins.autocomplete',
   require 'plugins.treesitter',
   require 'plugins.lsp',
@@ -38,7 +38,7 @@ require('lazy').setup({
   require 'plugins.telescope',
   require 'plugins.autopairs',
   require 'plugins.blankline',
-  require 'plugins.yazi',
+  --  require 'plugins.yazi',
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
