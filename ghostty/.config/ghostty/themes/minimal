@@ -34,3 +34,6 @@ gtk-titlebar=false
 cursor-style = "bar"
 cursor-style-blink = true
 window-decoration = false
+window-width = 120
+window-height = 45
+window-padding-x = 4
