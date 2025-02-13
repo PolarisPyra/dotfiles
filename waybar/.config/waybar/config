@@ -1,0 +1,166 @@
+{
+  "layer": "top",
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-left": [
+    "custom/os",
+    "clock",
+    "memory",
+    "cpu",
+    "disk",
+    "network#speed"
+
+  ],
+  "modules-right": [
+    "custom/notification",
+    "tray",
+    "network",
+    "pulseaudio"
+
+  ],
+  
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 12,
+    "height": 10,
+    "on-click": "activate",
+    "on-click-middle": "close"
+  },
+  "custom/os": {
+    "format": "󰣇",
+    "tooltip": false,
+    "on-click": "sh $HOME/.config/waybar/scripts/logout.sh"
+  },
+  "tray": {
+    "icon-size": 18,
+    "margin": 4,
+    "spacing": 10,
+    "tooltip": true,
+    "format": "{icon}",
+    "tooltip-format": "{icon} {status}",
+    "tooltip-size": 20
+  },
+
+  "memory": {
+    "interval": 10,
+    "format": "{used:0.1f}G 󰾆 / {total:0.1f}G",
+    "format-alt": "{percentage}% 󰾆",
+    "format-alt-click": "click",
+    "tooltip": true,
+    "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
+    "on-click-right": "kitty --title btop sh -c 'btop'"
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "󰘚 {usage}󱉸"
+  },
+  "disk": {
+    "interval": 60,
+    "format": "󰆼 {percentage_used}󱉸",
+    "path": "/"
+  },
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": true,
+    "sort-by-number": true,
+    "format": "{icon} {name}",
+    "show-special": true,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
+  "clock": {
+    "format": "<span color='#b4befe'> </span> {:%I:%M %p  %A, %b %d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "pulseaudio": {
+    "format": "<span color='#b4befe'>{icon} </span> {volume}%",
+    "format-muted": "󰝟 ",
+    "tooltip": false,
+    "format-icons": {
+      "headphone": "",
+      "default": [
+        "",
+        "",
+        "󰕾",
+        "󰕾",
+        "󰕾",
+        "",
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 1,
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+  "bluetooth": {
+    "format": " ",
+    "format-disabled": "󰂳",
+    "tooltip": false,
+    "format-connected": "<span color='#b4befe'></span> {device_alias}",
+    "on-click": "~/.config/hypr/scripts/bluetooth.sh"
+  },
+  "network": {
+    "interface": "enp8s0",
+    "format": "{ifname}",
+    "format-wifi": "{icon}  {essid}",
+    "format-ethernet": " ",
+    "format-disconnected": "󰤯 ",
+    "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 30,
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "on-click-right": "~/.config/hypr/scripts/network.sh",
+    "on-click": "nm-connection-editor"
+  },
+  "network#speed": {
+    "interval": 1,
+    "format": "{ifname}",
+    "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes} ",
+    "format-ethernet": "{icon} {bandwidthDownBytes}  {bandwidthUpBytes} ",
+    "format-disconnected": "󰌙",
+    "tooltip-format": "{ipaddr}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 30
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": " ",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
+}
