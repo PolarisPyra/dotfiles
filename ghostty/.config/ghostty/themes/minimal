@@ -30,6 +30,7 @@ palette = 14=#6ae4b9
 palette = 7=#ffffff
 palette = 15=#989898
 
+gtk-titlebar=false
 cursor-style = "bar"
 cursor-style-blink = true
-
+window-decoration = false
