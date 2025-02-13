@@ -2,7 +2,7 @@ if [ "$TERM_PROGRAM" != "vscode" ] && [ "$TERM_PROGRAM" != "cursor" ]; then
     ZSH_TMUX_AUTOSTART=true
 fi
 
-
+export EDITOR=nvim
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -140,6 +140,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(direnv hook zsh)"
-eval "$(zoxide init zsh)"
+
 export PATH="$HOME/.local/bin:$PATH"
 
