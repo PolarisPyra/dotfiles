@@ -1,23 +1,9 @@
 {
   "layer": "top",
   "output": "DP-6",
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
-  "modules-left": [
-    "custom/os",
-    "clock",
-    "memory",
-    "cpu",
-    "disk",
-    "privacy"
-  ],
-  "modules-right": [
-    "tray",
-    "network",
-    "pulseaudio"
- 
-  ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-left": ["custom/os", "clock", "memory", "cpu", "disk", "privacy"],
+  "modules-right": ["tray", "network", "pulseaudio"],
   "privacy": {
     "icon-size": 12,
     "icon-spacing": 5,
@@ -48,9 +34,9 @@
     "on-click-middle": "close"
   },
   "custom/os": {
-    "format": "󰮤",
+    "format": "󰣇",
     "tooltip": false,
-    "on-click": "sh $HOME/.config/hypr/scripts/wlogout.sh"
+    "on-click": "sh $HOME/.config/waybar/scripts/logout.sh"
   },
   "tray": {
     "icon-size": 18,
@@ -90,7 +76,6 @@
     "format": "󰆼 {percentage_used}󱉸",
     "path": "/"
   },
-  
   "hyprland/workspaces": {
     "active-only": false,
     "all-outputs": false,
@@ -116,23 +101,13 @@
     "tooltip": false,
     "format-icons": {
       "headphone": "",
-      "default": [
-        "",
-        "",
-        "󰕾",
-        "󰕾",
-        "󰕾",
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
     },
     "scroll-step": 1,
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   },
- 
   "network": {
     "interface": "enp8s0",
     "format": "{ifname}",
@@ -145,13 +120,7 @@
     "tooltip-format-ethernet": "{ifname} 󰌘",
     "tooltip-format-disconnected": "󰌙 Disconnected",
     "max-length": 30,
-    "format-icons": [
-      "󰤯",
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
-    ],
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "on-click": "nm-connection-editor"
   },
   "network#speed": {
@@ -167,7 +136,6 @@
     "tooltip-format-disconnected": "󰌙 Disconnected",
     "max-length": 30
   },
- 
   "custom/swaync": {
     "tooltip": false,
     "format": "{icon}",
