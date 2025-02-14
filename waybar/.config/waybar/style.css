@@ -20,6 +20,13 @@ tooltip label {
   color: #cdd6f4;
 }
 
+#custom-spotify {
+  background: #1db954;
+  color: #1e1e2e;
+  padding: 0 8px;
+  margin: 2px 4px;
+  border-radius: 6px;
+}
 
 #wlr-taskbar,
 #privacy,
@@ -34,12 +41,11 @@ tooltip label {
 #custom-swaync,
 #network,
 #custom-power,
-#custom-notification,
 #custom-lock {
   background: #1e1e2e;
   padding: 0 8px;
   margin: 2px 4px;
-  border-radius: 4px;
+  border-radius: 6px;
   color: #89b4fa;
 }
 

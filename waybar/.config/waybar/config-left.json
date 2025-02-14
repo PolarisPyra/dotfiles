@@ -1,5 +1,6 @@
 {
   "layer": "top",
+  "output": "DP-5",
   "modules-center": [
     "hyprland/workspaces"
   ],
@@ -9,17 +10,37 @@
     "memory",
     "cpu",
     "disk",
-    "network#speed"
-
+    "privacy"
   ],
   "modules-right": [
-    "custom/notification",
+    "custom/swaync",
     "tray",
     "network",
     "pulseaudio"
-
+ 
   ],
-  
+  "privacy": {
+    "icon-size": 12,
+    "icon-spacing": 5,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 12
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 12
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 12
+      }
+    ]
+  },
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 12,
@@ -28,9 +49,9 @@
     "on-click-middle": "close"
   },
   "custom/os": {
-    "format": "󰣇",
+    "format": "󰮤",
     "tooltip": false,
-    "on-click": "sh $HOME/.config/waybar/scripts/logout.sh"
+    "on-click": "sh $HOME/.config/hypr/scripts/wlogout.sh"
   },
   "tray": {
     "icon-size": 18,
@@ -41,7 +62,17 @@
     "tooltip-format": "{icon} {status}",
     "tooltip-size": 20
   },
-
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "<span color='#B37F34'><small></small></span>",
+      "balanced": "<span><small> </small></span>",
+      "power-saver": "<span color='#a6e3a1'><small></small></span>"
+    }
+  },
   "memory": {
     "interval": 10,
     "format": "{used:0.1f}G 󰾆 / {total:0.1f}G",
@@ -60,9 +91,40 @@
     "format": "󰆼 {percentage_used}󱉸",
     "path": "/"
   },
+  "mpris": {
+    "interval": 10,
+    "format": "{player_icon} ",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "on-click-middle": "playerctl play-pause",
+    "on-click": "playerctl previous",
+    "on-click-right": "playerctl next",
+    "scroll-step": 5.0,
+    "on-scroll-up": "~/.config/hypr/scripts/Volume.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/Volume.sh --dec",
+    "smooth-scrolling-threshold": 1,
+    "player-icons": {
+      "chromium": "",
+      "default": "",
+      "firefox": "",
+      "kdeconnect": "",
+      "mopidy": "",
+      "mpv": "󰐹",
+      "spotify": "",
+      "vlc": "󰕼"
+    },
+    "status-icons": {
+      "paused": "󰐎",
+      "playing": "",
+      "stopped": ""
+    },
+    "ignored-players": [
+      "firefox"
+    ],
+    "max-length": 30
+  },
   "hyprland/workspaces": {
     "active-only": false,
-    "all-outputs": true,
+    "all-outputs": false,
     "sort-by-number": true,
     "format": "{icon} {name}",
     "show-special": true,
@@ -97,19 +159,13 @@
       ]
     },
     "scroll-step": 1,
-    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    "on-scroll-up": "~/.config/hypr/scripts/volume.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/volume.sh --dec",
+    "on-click": "~/.config/hypr/scripts/volume.sh --toggle"
   },
-  "bluetooth": {
-    "format": " ",
-    "format-disabled": "󰂳",
-    "tooltip": false,
-    "format-connected": "<span color='#b4befe'></span> {device_alias}",
-    "on-click": "~/.config/hypr/scripts/bluetooth.sh"
-  },
+ 
   "network": {
-    "interface": "enp8s0",
+    "interface": "wlo1",
     "format": "{ifname}",
     "format-wifi": "{icon}  {essid}",
     "format-ethernet": " ",
@@ -143,9 +199,10 @@
     "tooltip-format-disconnected": "󰌙 Disconnected",
     "max-length": 30
   },
-  "custom/notification": {
+ 
+  "custom/swaync": {
     "tooltip": false,
-    "format": " ",
+    "format": "{icon}",
     "format-icons": {
       "notification": "<span foreground='red'><sup></sup></span>",
       "none": "",

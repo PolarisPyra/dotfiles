@@ -1,0 +1,192 @@
+{
+  "layer": "top",
+  "output": "DP-6",
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-left": [
+    "custom/os",
+    "clock",
+    "memory",
+    "cpu",
+    "disk",
+    "privacy"
+  ],
+  "modules-right": [
+    "custom/swaync",
+    "tray",
+    "network",
+    "pulseaudio"
+ 
+  ],
+  "privacy": {
+    "icon-size": 12,
+    "icon-spacing": 5,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 12
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 12
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 12
+      }
+    ]
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 12,
+    "height": 10,
+    "on-click": "activate",
+    "on-click-middle": "close"
+  },
+  "custom/os": {
+    "format": "󰮤",
+    "tooltip": false,
+    "on-click": "sh $HOME/.config/hypr/scripts/wlogout.sh"
+  },
+  "tray": {
+    "icon-size": 18,
+    "margin": 4,
+    "spacing": 10,
+    "tooltip": true,
+    "format": "{icon}",
+    "tooltip-format": "{icon} {status}",
+    "tooltip-size": 20
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "<span color='#B37F34'><small></small></span>",
+      "balanced": "<span><small> </small></span>",
+      "power-saver": "<span color='#a6e3a1'><small></small></span>"
+    }
+  },
+  "memory": {
+    "interval": 10,
+    "format": "{used:0.1f}G 󰾆 / {total:0.1f}G",
+    "format-alt": "{percentage}% 󰾆",
+    "format-alt-click": "click",
+    "tooltip": true,
+    "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
+    "on-click-right": "kitty --title btop sh -c 'btop'"
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "󰘚 {usage}󱉸"
+  },
+  "disk": {
+    "interval": 60,
+    "format": "󰆼 {percentage_used}󱉸",
+    "path": "/"
+  },
+  
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": false,
+    "sort-by-number": true,
+    "format": "{icon} {name}",
+    "show-special": true,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
+  "clock": {
+    "format": "<span color='#b4befe'> </span> {:%I:%M %p  %A, %b %d}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "pulseaudio": {
+    "format": "<span color='#b4befe'>{icon} </span> {volume}%",
+    "format-muted": "󰝟 ",
+    "tooltip": false,
+    "format-icons": {
+      "headphone": "",
+      "default": [
+        "",
+        "",
+        "󰕾",
+        "󰕾",
+        "󰕾",
+        "",
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 1,
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  },
+ 
+  "network": {
+    "interface": "enp8s0",
+    "format": "{ifname}",
+    "format-wifi": "{icon}  {essid}",
+    "format-ethernet": " ",
+    "format-disconnected": "󰤯 ",
+    "tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 30,
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "on-click": "nm-connection-editor"
+  },
+  "network#speed": {
+    "interval": 1,
+    "format": "{ifname}",
+    "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes} ",
+    "format-ethernet": "{icon} {bandwidthDownBytes}  {bandwidthUpBytes} ",
+    "format-disconnected": "󰌙",
+    "tooltip-format": "{ipaddr}",
+    "format-linked": "󰈁 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname} 󰌘",
+    "tooltip-format-disconnected": "󰌙 Disconnected",
+    "max-length": 30
+  },
+ 
+  "custom/swaync": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": " ",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": " ",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
+}
