@@ -3,7 +3,7 @@
   "output": "DP-5",
   "modules-center": ["hyprland/workspaces"],
   "modules-left": ["custom/os", "clock", "memory", "cpu", "disk", "privacy"],
-  "modules-right": ["custom/swaync", "tray", "network", "pulseaudio"],
+  "modules-right": ["tray", "network", "pulseaudio"],
   "privacy": {
     "icon-size": 12,
     "icon-spacing": 5,
@@ -138,7 +138,7 @@
     "on-click": "~/.config/hypr/scripts/volume.sh --toggle"
   },
   "network": {
-    "interface": "wlo1",
+    "interface": "enp8s0",
     "format": "{ifname}",
     "format-wifi": "{icon}  {essid}",
     "format-ethernet": " ",
