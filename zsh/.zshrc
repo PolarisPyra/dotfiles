@@ -143,5 +143,3 @@ eval "$(direnv hook zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-export FLYCTL_INSTALL="/home/polaris/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
