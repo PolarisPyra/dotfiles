@@ -10,8 +10,6 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 alias bonsai="cbonsai -l -i"
-export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
