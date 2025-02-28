@@ -130,14 +130,24 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 eval "$(starship init zsh)"
 
-# bun completions
-[ -s "/home/polaris/.bun/_bun" ] && source "/home/polaris/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(direnv hook zsh)"
 
 export PATH="$HOME/.local/bin:$PATH"
 
+alias pn="pnpm"
+
+# https://lynkz.com.au/blog/pnpm-for-nodejs-version-management
+# curl -fsSL https://get.pnpm.io/install.sh | sh -
+# pnpm add -g corepack
+# pnpm -g env use 20
+# pnpm -g env list
+!
+
+# pnpm
+export PNPM_HOME="/home/polaris/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
