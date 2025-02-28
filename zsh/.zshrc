@@ -1,3 +1,6 @@
+
+
+
 #yazi 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -21,7 +24,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 alias bonsai="cbonsai -l -i"
-
+alias extract="7z x"
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
