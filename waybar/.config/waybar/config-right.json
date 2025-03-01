@@ -2,7 +2,7 @@
   "layer": "top",
   "output": "DP-6",
   "modules-center": ["hyprland/workspaces"],
-  "modules-left": ["custom/os", "custom/swaync", "memory", "cpu", "disk", "privacy"],
+  "modules-left": ["custom/os", "memory", "cpu", "disk", "privacy"],
   "modules-right": ["clock", "tray", "network", "pulseaudio"],
   "privacy": {
     "icon-size": 12,
@@ -34,7 +34,7 @@
     "on-click-middle": "close"
   },
   "custom/os": {
-    "format": "Logout ",
+    "format": "Logout",
     "tooltip": false,
     "on-click": "sh $HOME/.config/waybar/scripts/logout.sh"
   },
@@ -141,13 +141,13 @@
     "format": "{icon}",
     "format-icons": {
       "notification": "<span><sup> </sup></span>",
-      "none": " ",
-      "dnd-notification": "<span><sup> </sup></span>",
-      "dnd-none": " ",
+      "none": "",
+      "dnd-notification": "span><sup> </sup></span>",
+      "dnd-none": "",
       "inhibited-notification": "<span><sup> </sup></span>",
       "inhibited-none": " ",
-      "dnd-inhibited-notification": "<span ><sup> </sup></span>",
-      "dnd-inhibited-none": " "
+      "dnd-inhibited-notification": " <span ><sup> </sup></>",
+      "dnd-inhibited-none": ""
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
