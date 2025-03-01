@@ -1,1 +1,1 @@
-wlogout -b 6
+loginctl kill-session $XDG_SESSION_ID

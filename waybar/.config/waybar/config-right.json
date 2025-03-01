@@ -34,7 +34,7 @@
     "on-click-middle": "close"
   },
   "custom/os": {
-    "format": "󰣇",
+    "format": "Logout ",
     "tooltip": false,
     "on-click": "sh $HOME/.config/waybar/scripts/logout.sh"
   },
