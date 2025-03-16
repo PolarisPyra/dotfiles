@@ -9,7 +9,7 @@ return {
     local formatting = null_ls.builtins.formatting -- to setup formatters
     local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
-    null_ls.builtins.formatters.prettierd.with {
+    null_ls.builtins.formatting.prettierd.with {
       condition = function(utils)
         return utils.has_file {
           '.prettierrc',

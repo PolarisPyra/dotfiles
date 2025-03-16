@@ -1,5 +1,5 @@
-require 'core.options' -- Load general options
-require 'core.keymaps' -- Load general keymaps
+require 'core.options'  -- Load general options
+require 'core.keymaps'  -- Load general keymaps
 require 'core.snippets' -- Custom code snippets
 
 -- Install package manager
@@ -39,7 +39,7 @@ require('lazy').setup({
   require 'plugins.autopairs',
   require 'plugins.blankline',
   --  require 'plugins.yazi',
-  require 'plugins.copilot',
+  --  require 'plugins.copilot',
   require 'plugins.lualine',
 }, {
   ui = {
