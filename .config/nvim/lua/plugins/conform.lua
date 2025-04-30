@@ -78,14 +78,6 @@ return { -- Autoformat
 				"prettier",
 				stop_after_first = true,
 			},
-			php = { "scf-docker" },
-		},
-		formatters = {
-			["scf-docker"] = {
-				command = "/Users/jakob/Development/gitlab/ekkogmbh/scf/scripts/docker-wrapper.sh",
-				args = { "format", "--filepath-for-matcher", "$FILENAME" },
-				stdin = true,
-			},
 		},
 	},
 }
