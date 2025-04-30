@@ -1,11 +1,13 @@
-return {{
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    config = true
-}, {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    opts = {},
+return {
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = true,
+	},
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {},
     -- stylua: ignore
     keys = {{
         "zk",
@@ -43,4 +45,6 @@ return {{
         end,
         desc = "Toggle Flash Search"
     }}
-}}
+,
+	},
+}
