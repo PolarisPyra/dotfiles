@@ -1,4 +1,3 @@
-vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.shiftwidth = 2 -- Amount to indent with << and >>
 vim.opt.tabstop = 2 -- How many spaces are shown per Tab
 vim.opt.softtabstop = 2 -- How many spaces are applied when pressing Tab
@@ -33,19 +32,10 @@ vim.opt.smartcase = true
 -- Keep signcolumn on by default
 vim.opt.signcolumn = "yes"
 
+--2025-04-29 whitespace chars
+--vim.opt.list = true
+--vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
--- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = {
-	tab = "» ",
-	trail = "·",
-	nbsp = "␣",
-}
-
--- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 5
