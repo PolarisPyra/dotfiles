@@ -20,7 +20,7 @@
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
 # font-family = Iosevka
-  theme = Kanagawa Dragon
+  theme = rose-pine
   window-padding-x = 4
   window-padding-y = 4
 #

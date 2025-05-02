@@ -1,10 +1,7 @@
 return {
-	"rebelot/kanagawa.nvim",
-	branch = "master",
+	"rose-pine/neovim",
+	name = "rose-pine",
 	config = function()
-		require("kanagawa").setup({
-			transparent = true,
-		})
-		vim.cmd("colorscheme kanagawa")
+		vim.cmd("colorscheme rose-pine")
 	end,
 }
