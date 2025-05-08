@@ -24,11 +24,12 @@ return {
 			"<leader>fc",
 			function()
 				require("fzf-lua").files({
-					cwd = vim.fn.stdpath("config"),
+					cwd = vim.fn.expand("~/.dotfiles/.config/nvim"),
 				})
 			end,
 			desc = "Find in neovim configuration",
 		},
+
 		{
 			"<leader>fh",
 			function()
