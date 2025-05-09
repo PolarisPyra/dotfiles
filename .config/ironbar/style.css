@@ -38,15 +38,15 @@
 }
 
 .workspaces .item.focused {
-	color: plum;
+	color: darkslategray;
 }
 
 .workspaces .item {
-	color: lightgray;
+	color: lightslategray;
 }
 
 .workspaces .item.item.inactive {
-	color: white;
+	color: ghostwhite;
 }
 
 .music {
