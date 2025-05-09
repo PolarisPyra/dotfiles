@@ -1,12 +1,5 @@
-#right {
+#bar {
 	background-color: rgba(85, 85, 85, 0.356);
-	border-radius: 12px;
-	border: solid #525252 2px;
-}
-
-#left {
-	background-color: rgba(14, 15, 1, 255);
-	font-size: 12px;
 	font-weight: 700;
 	font-family: 'JetBrains Mono', monospace;
 }
@@ -23,7 +16,7 @@
 	margin-bottom: 4px;
 }
 
-#left .clock {
+#bar .clock {
 	padding: 0;
 	margin: 0;
 	margin-left: 6px;
@@ -44,16 +37,33 @@
 	text-shadow: none;
 	padding: 0;
 	margin: 0;
-	margin-top: -2px;
 }
 
 .workspaces .item.focused {
 	color: #fff;
 }
 
+.music {
+	background: transparent;
+	box-shadow: none;
+	padding: 0;
+	border: none;
+	text-shadow: none;
+	color: #ddd;
+}
+
+#bar .music {
+	padding: 0;
+	margin: 0;
+}
+
+
+
 /* Tray */
 .tray {
-	margin-right: 5px;
+	margin-bottom: 6px;
+	margin-right: 6px;
+	color: #ddd;
 }
 
 /* Focused */
@@ -64,10 +74,11 @@
 /* Sys info */
 .sysinfo {
 	margin-right: 6px;
+	color: #ddd;
 }
 
 /* Weather */
 .script {
+	color: #ddd;
 	margin-left: 12px;
-	font-family: 'JetBrains Mono', monospace;
 }

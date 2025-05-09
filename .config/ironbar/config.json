@@ -1,7 +1,7 @@
 {
   "monitors": {
     "DP-5": {
-      "name": "left",
+      "name": "bar",
       "position": "top",
       "height": 30,
       "transition_type": "none",
@@ -15,6 +15,15 @@
           "cmd": "~/.config/ironbar/weather.sh",
           "mode": "poll",
           "interval": 60000
+        },
+        {
+          "type": "music",
+          "player_type": "mpris",
+          "format": "{title} / {artist}",
+          "icons": {
+            "play": "",
+            "pause": ""
+          }
         }
       ],
       "center": [
@@ -50,7 +59,7 @@
       ]
     },
     "DP-6": {
-      "name": "left",
+      "name": "bar",
       "position": "top",
       "height": 30,
       "transition_type": "none",
