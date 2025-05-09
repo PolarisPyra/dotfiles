@@ -1,5 +1,5 @@
 #bar {
-	background-color: lightpink;
+	background-color: black;
 	font-weight: 700;
 	font-family: 'JetBrains Mono', monospace;
 }
@@ -11,7 +11,7 @@
 	padding: 0;
 	border: none;
 	text-shadow: none;
-	color: black;
+	color: whitesmoke;
 }
 
 #bar .clock {
@@ -55,7 +55,7 @@
 	padding: 0;
 	border: none;
 	text-shadow: none;
-	color: black;
+	color: whitesmoke;
 }
 
 #bar .music {
@@ -66,7 +66,6 @@
 /* Tray */
 .tray {
 	margin-right: 6px;
-	color: black;
 }
 
 /* Focused */
@@ -77,11 +76,11 @@
 /* Sys info */
 .sysinfo {
 	margin-right: 6px;
-	color: black;
+	color: whitesmoke;
 }
 
 /* Weather */
 .script {
-	color: black;
+	color: whitesmoke;
 	margin-left: 12px;
 }
