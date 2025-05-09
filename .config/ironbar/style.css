@@ -12,14 +12,12 @@
 	border: none;
 	text-shadow: none;
 	color: #ddd;
-	margin-top: -6px;
-	margin-bottom: 4px;
 }
 
 #bar .clock {
 	padding: 0;
 	margin: 0;
-	margin-left: 6px;
+	margin-right: 6px;
 }
 
 /* Workspaces */

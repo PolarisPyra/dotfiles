@@ -7,10 +7,6 @@
       "transition_type": "none",
       "start": [
         {
-          "type": "clock",
-          "format": "%I:%M:%S %p %d/%m/%y"
-        },
-        {
           "type": "script",
           "cmd": "~/.config/ironbar/weather.sh",
           "mode": "poll",
@@ -43,7 +39,11 @@
       ],
       "end": [
         {
-          "format": ["CPU {cpu_percent}% {cpu_frequency} GHz |"],
+          "type": "tray"
+        },
+
+        {
+          "format": [" CPU {cpu_frequency} GHz"],
           "interval": {
             "cpu": 1,
             "disks": 300,
@@ -54,7 +54,8 @@
           "type": "sys_info"
         },
         {
-          "type": "tray"
+          "type": "clock",
+          "format": "%I:%M:%S %p %d/%m/%y"
         }
       ]
     },
