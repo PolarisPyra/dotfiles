@@ -41,7 +41,6 @@
         {
           "type": "tray"
         },
-
         {
           "format": [" CPU {cpu_frequency} GHz"],
           "interval": {
@@ -55,7 +54,18 @@
         },
         {
           "type": "clock",
-          "format": "%I:%M:%S %p %d/%m/%y"
+          "format": "%I:%M:%S %p"
+        },
+        {
+          "type": "volume",
+          "format": "{icon} {percentage}%",
+          "max_volume": 100,
+          "icons": {
+            "volume_high": "󰕾",
+            "volume_medium": "󰖀",
+            "volume_low": "󰕿",
+            "muted": "󰝟"
+          }
         }
       ]
     },

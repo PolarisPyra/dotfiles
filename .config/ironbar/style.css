@@ -63,6 +63,20 @@
 	margin: 0;
 }
 
+.volume {
+	background: transparent;
+	box-shadow: none;
+	padding: 0;
+	border: none;
+	text-shadow: none;
+	color: whitesmoke;
+}
+
+#bar .volume {
+	padding: 0;
+	margin-right: 8px;
+}
+
 /* Tray */
 .tray {
 	margin-right: 6px;
