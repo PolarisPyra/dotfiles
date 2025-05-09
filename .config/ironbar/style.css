@@ -1,5 +1,5 @@
 #bar {
-	background-color: rgba(85, 85, 85, 0.356);
+	background-color: lightpink;
 	font-weight: 700;
 	font-family: 'JetBrains Mono', monospace;
 }
@@ -11,7 +11,7 @@
 	padding: 0;
 	border: none;
 	text-shadow: none;
-	color: #ddd;
+	color: black;
 }
 
 #bar .clock {
@@ -38,7 +38,15 @@
 }
 
 .workspaces .item.focused {
-	color: #fff;
+	color: plum;
+}
+
+.workspaces .item {
+	color: lightgray;
+}
+
+.workspaces .item.item.inactive {
+	color: white;
 }
 
 .music {
@@ -55,12 +63,10 @@
 	margin: 0;
 }
 
-
-
 /* Tray */
 .tray {
 	margin-right: 6px;
-	color: #ddd;
+	color: black;
 }
 
 /* Focused */
@@ -71,11 +77,11 @@
 /* Sys info */
 .sysinfo {
 	margin-right: 6px;
-	color: #ddd;
+	color: black;
 }
 
 /* Weather */
 .script {
-	color: #ddd;
+	color: black;
 	margin-left: 12px;
 }
