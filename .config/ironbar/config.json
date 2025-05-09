@@ -8,7 +8,7 @@
       "start": [
         {
           "type": "clock",
-          "format": "%H:%M:%S %d/%m/%y"
+          "format": "%I:%M:%S %p %d/%m/%y"
         },
         {
           "type": "script",
