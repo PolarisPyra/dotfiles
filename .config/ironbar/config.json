@@ -15,11 +15,7 @@
         {
           "type": "music",
           "player_type": "mpris",
-          "format": "{title} / {artist}",
-          "icons": {
-            "play": "",
-            "pause": ""
-          }
+          "format": "{title} / {artist}"
         }
       ],
       "center": [
@@ -84,11 +80,7 @@
         {
           "type": "music",
           "player_type": "mpris",
-          "format": "{title} / {artist}",
-          "icons": {
-            "play": "",
-            "pause": ""
-          }
+          "format": "{title} / {artist}"
         }
       ],
       "center": [
