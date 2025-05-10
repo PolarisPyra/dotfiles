@@ -17,8 +17,8 @@
           "player_type": "mpris",
           "format": "{title} / {artist}",
           "icons": {
-            "play": "",
-            "pause": ""
+            "play": "",
+            "pause": ""
           }
         }
       ],
@@ -76,34 +76,42 @@
       "transition_type": "none",
       "start": [
         {
-          "type": "clock",
-          "format": "%H:%M:%S %d/%m/%y"
-        },
-        {
           "type": "script",
           "cmd": "~/.config/ironbar/weather.sh",
           "mode": "poll",
           "interval": 60000
+        },
+        {
+          "type": "music",
+          "player_type": "mpris",
+          "format": "{title} / {artist}",
+          "icons": {
+            "play": "",
+            "pause": ""
+          }
         }
       ],
       "center": [
         {
           "type": "workspaces",
           "name_map": {
-            "6": "●",
-            "7": "●",
-            "8": "●",
-            "9": "●",
-            "10": "●"
+            "1": "●",
+            "2": "●",
+            "3": "●",
+            "4": "●",
+            "5": "●"
           },
           "sort": "name",
           "all_monitors": false,
-          "favorites": ["6", "7", "8", "9", "10"]
+          "favorites": ["1", "2", "3", "4", "5"]
         }
       ],
       "end": [
         {
-          "format": ["CPU {cpu_percent}% {cpu_frequency} GHz |"],
+          "type": "tray"
+        },
+        {
+          "format": [" CPU {cpu_frequency} GHz"],
           "interval": {
             "cpu": 1,
             "disks": 300,
@@ -112,6 +120,21 @@
             "temps": 5
           },
           "type": "sys_info"
+        },
+        {
+          "type": "clock",
+          "format": "%I:%M:%S %p"
+        },
+        {
+          "type": "volume",
+          "format": "{icon} {percentage}%",
+          "max_volume": 100,
+          "icons": {
+            "volume_high": "󰕾",
+            "volume_medium": "󰖀",
+            "volume_low": "󰕿",
+            "muted": "󰝟"
+          }
         }
       ]
     }

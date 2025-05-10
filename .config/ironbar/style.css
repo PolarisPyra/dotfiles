@@ -41,10 +41,10 @@
 	color: darkslategray;
 }
 
-.workspaces .item {
+/* .workspaces .item {
 	color: lightslategray;
 }
-
+*/
 .workspaces .item.item.inactive {
 	color: ghostwhite;
 }
