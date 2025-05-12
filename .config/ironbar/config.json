@@ -14,7 +14,9 @@
         },
         {
           "type": "music",
-          "player_type": "mpris",
+          "player_type": "mpd",
+          "host": "localhost:6600",
+          "music_dir": "/home/polaris/media/storage/music/",
           "format": "{title} / {artist}"
         }
       ],

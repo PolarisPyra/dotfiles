@@ -14,44 +14,6 @@
 .sysinfo .item,
 .tray,
 .clock,
-.pacman {
-	background: #232136;
-	border-radius: 8px;
-	margin: 5px 10px 0 10px;
-	padding: 4px 10px;
-	box-shadow: none;
-	color: #e0def4;
-}
-
-/* Hover Effects */
-.volume:hover,
-.weather:hover,
-.focused:hover,
-.music:hover,
-.pacman:hover {
-	color: #ea9a97;
-	background: transparent;
-	transition: all 0.3s ease-in-out;
-	opacity: 1;
-}
-
-* {
-	font-family: 'JetBrains Mono', monospace;
-	font-size: 14px;
-	font-weight: 500;
-}
-
-.background {
-	background-color: rgba(0, 0, 0, 0);
-}
-
-/* Standardize all main containers */
-.volume,
-.script,
-.music,
-.sysinfo .item,
-.tray,
-.clock,
 .pacman,
 .workspaces {
 	background: #232136;
@@ -60,22 +22,11 @@
 	padding: 4px 10px;
 	box-shadow: none;
 	color: #e0def4;
+
 }
 
 .music {
 	padding-left: 0;
-}
-
-/* Hover Effects */
-.volume:hover,
-.weather:hover,
-.focused:hover,
-.music:hover,
-.pacman:hover {
-	color: #ea9a97;
-	background: transparent;
-	transition: all 0.3s ease-in-out;
-	opacity: 1;
 }
 
 /* Workspaces items */
