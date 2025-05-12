@@ -1,100 +1,112 @@
-#bar {
-	background-color: black;
-	font-weight: 700;
+* {
 	font-family: 'JetBrains Mono', monospace;
+	font-size: 14px;
+	font-weight: 500;
 }
 
-/* Clocks */
-.clock {
-	background: transparent;
+.background {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.volume,
+.script,
+.music,
+.sysinfo .item,
+.tray,
+.clock,
+.pacman {
+	background: #232136;
+	border-radius: 8px;
+	margin: 5px 10px 0 10px;
+	padding: 4px 10px;
 	box-shadow: none;
-	padding: 0;
-	border: none;
-	text-shadow: none;
-	color: whitesmoke;
+	color: #e0def4;
 }
 
-#bar .clock {
-	padding: 0;
-	margin: 0;
-	margin-right: 6px;
-}
-
-/* Workspaces */
-.workspaces,
-.workspaces .item,
-.workspaces .item.visible,
-.workspaces .item.urgent,
-.workspaces .item.inactive,
-.workspaces .item .icon,
-.workspaces .item .text-icon,
-.workspaces .item .image {
+/* Hover Effects */
+.volume:hover,
+.weather:hover,
+.focused:hover,
+.music:hover,
+.pacman:hover {
+	color: #ea9a97;
 	background: transparent;
-	border: none;
+	transition: all 0.3s ease-in-out;
+	opacity: 1;
+}
+
+* {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.background {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+/* Standardize all main containers */
+.volume,
+.script,
+.music,
+.sysinfo .item,
+.tray,
+.clock,
+.pacman,
+.workspaces {
+	background: #232136;
+	border-radius: 8px;
+	margin: 5px 10px;
+	padding: 4px 10px;
 	box-shadow: none;
-	text-shadow: none;
-	padding: 0;
-	margin: 0;
+	color: #e0def4;
+}
+
+/* Hover Effects */
+.volume:hover,
+.weather:hover,
+.focused:hover,
+.music:hover,
+.pacman:hover {
+	color: #ea9a97;
+	background: transparent;
+	transition: all 0.3s ease-in-out;
+	opacity: 1;
+}
+
+/* Workspaces items */
+.workspaces button,
+.workspaces .item {
+	padding: 0 6px;
+	margin: 0 2px;
+	border: 0px;
+	background: transparent;
+	color: #6e6a86;
+	transition: all 0.3s ease-in-out;
+	opacity: 0.7;
 }
 
 .workspaces .item.focused {
-	color: darkslategray;
-}
-
-/* .workspaces .item {
-	color: lightslategray;
-}
-*/
-.workspaces .item.item.inactive {
-	color: ghostwhite;
-}
-
-.music {
+	color: #ea9a97;
 	background: transparent;
-	box-shadow: none;
-	padding: 0;
-	border: none;
-	text-shadow: none;
-	color: whitesmoke;
+	opacity: 1;
 }
 
-#bar .music {
-	padding: 0;
-	margin: 0;
+/* Popup styling */
+.popup-volume,
+.popup-clock,
+.popup-music {
+	background-color: rgba(26, 27, 38, 0.8);
+	border-radius: 10px;
+	border: 2px solid #6e6a86;
+	color: #e0def4;
+	padding: 8px 12px;
 }
 
-.volume {
-	background: transparent;
-	box-shadow: none;
-	padding: 0;
-	border: none;
-	text-shadow: none;
-	color: whitesmoke;
+.pacman {
+	color: #9bce6a;
 }
 
-#bar .volume {
-	padding: 0;
-	margin-right: 8px;
-}
-
-/* Tray */
-.tray {
-	margin-right: 6px;
-}
-
-/* Focused */
-.focused {
-	margin-top: 6px;
-}
-
-/* Sys info */
-.sysinfo {
-	margin-right: 6px;
-	color: whitesmoke;
-}
-
-/* Weather */
-.script {
-	color: whitesmoke;
-	margin-left: 12px;
+.sysinfo .item {
+	color: #9ccfd8;
 }

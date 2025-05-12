@@ -34,10 +34,21 @@
       ],
       "end": [
         {
+          "type": "custom",
+          "bar": [
+            {
+              "type": "label",
+              "name": "pacman",
+              "class": "pacman",
+              "label": "{{600000:checkupdates | wc -l}}"
+            }
+          ]
+        },
+        {
           "type": "tray"
         },
         {
-          "format": [" CPU {cpu_frequency} GHz"],
+          "format": ["CPU {cpu_frequency} GHz"],
           "interval": {
             "cpu": 1,
             "disks": 300,
@@ -98,10 +109,21 @@
       ],
       "end": [
         {
+          "type": "custom",
+          "bar": [
+            {
+              "type": "label",
+              "name": "pacman",
+              "class": "pacman",
+              "label": "{{600000:checkupdates | wc -l}}"
+            }
+          ]
+        },
+        {
           "type": "tray"
         },
         {
-          "format": [" CPU {cpu_frequency} GHz"],
+          "format": ["CPU {cpu_frequency} GHz"],
           "interval": {
             "cpu": 1,
             "disks": 300,
