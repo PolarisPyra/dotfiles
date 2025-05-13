@@ -14,7 +14,7 @@
 .sysinfo .item,
 .tray,
 .clock,
-.pacman,
+.custom,
 .workspaces {
 	background: #232136;
 	border-radius: 8px;
@@ -22,8 +22,14 @@
 	padding: 4px 10px;
 	box-shadow: none;
 	color: #e0def4;
-
 }
+
+.power-menu #power-btn {
+	color: white;
+	background-color: transparent;
+	border: none;
+}
+
 
 .music {
 	padding-left: 0;
@@ -58,9 +64,7 @@
 	padding: 8px 12px;
 }
 
-.pacman {
-	color: #9bce6a;
-}
+
 
 .sysinfo .item {
 	color: #9ccfd8;

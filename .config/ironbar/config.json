@@ -7,6 +7,18 @@
       "transition_type": "none",
       "start": [
         {
+          "bar": [
+            {
+              "on_click": "!wlogout",
+              "label": "",
+              "name": "power-btn",
+              "type": "button"
+            }
+          ],
+          "class": "power-menu",
+          "type": "custom"
+        },
+        {
           "type": "script",
           "cmd": "~/.config/ironbar/weather.sh",
           "mode": "poll",
@@ -33,17 +45,6 @@
         }
       ],
       "end": [
-        {
-          "type": "custom",
-          "bar": [
-            {
-              "type": "label",
-              "name": "pacman",
-              "class": "pacman",
-              "label": "{{600000:checkupdates | wc -l}}"
-            }
-          ]
-        },
         {
           "type": "tray"
         },
@@ -108,17 +109,6 @@
         }
       ],
       "end": [
-        {
-          "type": "custom",
-          "bar": [
-            {
-              "type": "label",
-              "name": "pacman",
-              "class": "pacman",
-              "label": "{{600000:checkupdates | wc -l}}"
-            }
-          ]
-        },
         {
           "type": "tray"
         },
