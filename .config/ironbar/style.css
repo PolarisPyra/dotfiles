@@ -21,6 +21,7 @@
 .workspaces {
 	background: #232136;
 	border-radius: 0px 0px 5px 5px;
+	border: none;
 	box-shadow: none;
 	color: #e0def4;
 	margin: 0 5px;
