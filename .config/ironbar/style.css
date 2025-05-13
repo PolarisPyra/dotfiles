@@ -1,6 +1,8 @@
 * {
 	font-family: 'JetBrains Mono', monospace;
 	font-size: 14px;
+	margin: 0;
+	padding: 0;
 	font-weight: 500;
 }
 
@@ -14,32 +16,29 @@
 .sysinfo .item,
 .tray,
 .clock,
+.script,
 .custom,
 .workspaces {
 	background: #232136;
-	border-radius: 8px;
-	margin: 5px 10px;
-	padding: 4px 10px;
+	border-radius: 0px 0px 5px 5px;
 	box-shadow: none;
 	color: #e0def4;
+	margin: 0 5px;
+	padding: 4px 8px;
 }
 
 .power-menu #power-btn {
 	color: white;
 	background-color: transparent;
 	border: none;
+	margin: 0 5px;
 }
 
-
-.music {
-	padding-left: 0;
-}
-
-/* Workspaces items */
 .workspaces button,
 .workspaces .item {
 	padding: 0 6px;
-	margin: 0 2px;
+	margin: 0 3px;
+
 	border: 0px;
 	background: transparent;
 	color: #6e6a86;
@@ -53,7 +52,6 @@
 	opacity: 1;
 }
 
-/* Popup styling */
 .popup-volume,
 .popup-clock,
 .popup-music {
@@ -62,10 +60,4 @@
 	border: 2px solid #6e6a86;
 	color: #e0def4;
 	padding: 8px 12px;
-}
-
-
-
-.sysinfo .item {
-	color: #9ccfd8;
 }
