@@ -10,7 +10,7 @@
           "bar": [
             {
               "on_click": "!wlogout -m 200 -r 20 -c 20 -s -n",
-              "label": "",
+              "label": "<span font-size='18pt'></span>",
               "name": "power-btn",
               "type": "button"
             }
@@ -86,7 +86,7 @@
           "bar": [
             {
               "on_click": "!wlogout -m 200 -r 20 -c 20 -s -n",
-              "label": "",
+              "label": "<span font-size='18pt'></span>",
               "name": "power-btn",
               "type": "button"
             }
