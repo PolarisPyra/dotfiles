@@ -17,24 +17,18 @@
 .tray,
 .clock,
 .custom,
-.workspaces {
-	background: transparent;
-	border: none;
-	color: #e0def4;
-	box-shadow: none;
-	padding-top: 2px;
-	padding-right: 6px;
-	padding-bottom: 2px;
-}
-
+.workspaces,
 .power-menu #power-btn {
 	background: transparent;
 	border: none;
 	color: #e0def4;
 	box-shadow: none;
-	padding-right: 4px;
-	padding-left: 8px;
+	padding: 1px 6px;
+}
 
+.power-menu #power-btn {
+	padding-left: 8px;
+	padding-right: 4px;
 }
 
 .power-menu #power-btn:active {
@@ -67,6 +61,7 @@
 	box-shadow: none;
 }
 
+/* Popup Styling */
 .popup-volume,
 .popup-clock,
 .popup-music {
@@ -79,5 +74,4 @@
 
 .volume {
 	padding-right: 10px;
-
 }
