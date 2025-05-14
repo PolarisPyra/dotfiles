@@ -22,9 +22,9 @@
 	border: none;
 	color: #e0def4;
 	box-shadow: none;
-	margin-top: 2px;
-	margin-right: 3px;
-	margin-bottom: 2px;
+	padding-top: 2px;
+	padding-right: 6px;
+	padding-bottom: 2px;
 }
 
 .power-menu #power-btn {
@@ -33,7 +33,7 @@
 	color: #e0def4;
 	box-shadow: none;
 	padding-right: 4px;
-	padding-left: 4px;
+	padding-left: 8px;
 
 }
 
@@ -78,6 +78,6 @@
 }
 
 .volume {
-	padding-right: 4px;
+	padding-right: 10px;
 
 }
