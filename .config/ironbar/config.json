@@ -3,14 +3,14 @@
     "DP-5": {
       "name": "bar",
       "position": "top",
-      "height": 30,
+      "height": 10,
       "transition_type": "none",
       "start": [
         {
           "bar": [
             {
               "on_click": "!wlogout -m 200 -r 20 -c 20 -s -n",
-              "label": "<span font-size='18pt'></span>",
+              "label": "<span font-size='14pt'></span>",
               "name": "power-btn",
               "type": "button"
             }
@@ -79,14 +79,14 @@
     "DP-6": {
       "name": "bar",
       "position": "top",
-      "height": 30,
+      "height": 10,
       "transition_type": "none",
       "start": [
         {
           "bar": [
             {
               "on_click": "!wlogout -m 200 -r 20 -c 20 -s -n",
-              "label": "<span font-size='18pt'></span>",
+              "label": "<span font-size='14pt'></span>",
               "name": "power-btn",
               "type": "button"
             }

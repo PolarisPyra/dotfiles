@@ -1,13 +1,13 @@
 * {
 	font-family: 'JetBrains Mono', monospace;
 	font-size: 14px;
+	font-weight: 500;
 	margin: 0;
 	padding: 0;
-	font-weight: 500;
 }
 
 .background {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .volume,
@@ -16,28 +16,29 @@
 .sysinfo .item,
 .tray,
 .clock,
-.script,
 .custom,
 .workspaces {
 	background: transparent;
-	border-radius: 0px 0px 5px 5px;
 	border: none;
-	box-shadow: none;
 	color: #e0def4;
-	padding: 4px;
+	box-shadow: none;
+	margin-top: 2px;
+	margin-right: 3px;
+	margin-bottom: 2px;
 }
 
 .power-menu #power-btn {
-	color: #e0def4;
-	background-color: transparent;
+	background: transparent;
 	border: none;
-	margin: 0 5px;
-	outline: none;
+	color: #e0def4;
 	box-shadow: none;
+	padding-right: 4px;
+	padding-left: 4px;
+
 }
 
 .power-menu #power-btn:active {
-	color: #e0def4;
+	color: #44415a;
 	border: none;
 	outline: none;
 	box-shadow: none;
@@ -47,8 +48,7 @@
 .workspaces .item {
 	padding: 0 6px;
 	margin: 0 3px;
-
-	border: 0px;
+	border: none;
 	background: transparent;
 	color: #6e6a86;
 	transition: all 0.3s ease-in-out;
@@ -61,12 +61,23 @@
 	opacity: 1;
 }
 
+.workspaces .item:active {
+	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
 .popup-volume,
 .popup-clock,
 .popup-music {
 	background-color: rgba(26, 27, 38, 0.8);
-	border-radius: 10px;
 	border: 2px solid #6e6a86;
+	border-radius: 10px;
 	color: #e0def4;
 	padding: 8px 12px;
+}
+
+.volume {
+	padding-right: 4px;
+
 }
