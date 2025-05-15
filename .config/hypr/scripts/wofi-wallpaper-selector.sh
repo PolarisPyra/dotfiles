@@ -7,12 +7,6 @@ THUMBNAIL_WIDTH="1024" # 16:9 width
 THUMBNAIL_HEIGHT="576" # 16:9 height
 CURRENT_WALLPAPER_FILE="$HOME/.cache/current_wallpaper"
 
-# Ensure clean cache each run
-cleanup_cache() {
-	rm -rf "$CACHE_DIR"
-	mkdir -p "$CACHE_DIR"
-}
-
 # Generate thumbnail for a wallpaper
 generate_thumbnail() {
 	local input="$1"
@@ -69,12 +63,9 @@ handle_selection() {
 
 # Main function
 main() {
-	cleanup_cache
-
 	local selected
 	selected=$(
 		generate_menu | wofi --show dmenu \
-			--cache-file /dev/null \
 			--define "image-size=${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" \
 			--columns 2 \
 			--allow-images \
