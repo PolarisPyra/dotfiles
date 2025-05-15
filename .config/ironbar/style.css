@@ -7,7 +7,7 @@
 }
 
 .background {
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.8);
 }
 
 .volume,
@@ -61,7 +61,6 @@
 	box-shadow: none;
 }
 
-/* Popup Styling */
 .popup-volume,
 .popup-clock,
 .popup-music {
