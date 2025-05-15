@@ -23,7 +23,7 @@
 	border: none;
 	color: #e0def4;
 	box-shadow: none;
-	padding: 1px 6px;
+	padding: 2px 6px;
 }
 
 .power-menu #power-btn {
@@ -40,8 +40,7 @@
 
 .workspaces button,
 .workspaces .item {
-	padding: 0 6px;
-	margin: 0 3px;
+	padding: 0 2px;
 	border: none;
 	background: transparent;
 	color: #6e6a86;
