@@ -1,91 +1,89 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-#
-# From: https://github.com/highonskooma/Wofi-Wallpaper-Picker
-#
-
-WALLPAPER_DIR="$HOME/.dotfiles/.config/hypr/wallpapers/" # Change this to your wallpaper directory
+# Configurations
+WALLPAPER_DIR="$HOME/.dotfiles/.config/hypr/wallpapers"
 CACHE_DIR="$HOME/.cache/wallpaper-selector"
-THUMBNAIL_WIDTH="250" # Size of thumbnails in pixels (16:9)
-THUMBNAIL_HEIGHT="141"
-mkdir -p "$CACHE_DIR"
+THUMBNAIL_WIDTH="1024" # 16:9 width
+THUMBNAIL_HEIGHT="576" # 16:9 height
+CURRENT_WALLPAPER_FILE="$HOME/.cache/current_wallpaper"
 
+# Ensure clean cache each run
+cleanup_cache() {
+	rm -rf "$CACHE_DIR"
+	mkdir -p "$CACHE_DIR"
+}
+
+# Generate thumbnail for a wallpaper
 generate_thumbnail() {
 	local input="$1"
 	local output="$2"
-	magick "$input" -thumbnail "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}^" -gravity center -extent "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" "$output"
+
+	magick "$input" \
+		-thumbnail "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}^" \
+		-gravity center \
+		-extent "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" \
+		-quality 90 \
+		"$output"
 }
 
-# Create shuffle icon thumbnail on the fly
-SHUFFLE_ICON="$CACHE_DIR/shuffle_thumbnail.png"
-magick -size "${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" xc:#1e1e2e \
-	\( "$HOME/Repos/wallpaper-selector/assets/shuffle.png" -resize "80x80" \) \
-	-gravity center -composite "$SHUFFLE_ICON"
-
+# Generate menu entries for wofi
 generate_menu() {
-	# Add random/shuffle option with a name that sorts first (using ! prefix)
-	echo -en "img:$SHUFFLE_ICON\x00info:!Random Wallpaper\x1fRANDOM\n"
-
-	# Then add all wallpapers
 	for img in "$WALLPAPER_DIR"/*.{jpg,jpeg,png}; do
-		# Skip if no matches found
 		[[ -f "$img" ]] || continue
 
-		# Generate thumbnail filename
-		thumbnail="$CACHE_DIR/$(basename "${img%.*}").png"
+		local base_name
+		base_name="$(basename "${img%.*}")"
+		local thumbnail="$CACHE_DIR/$base_name.png"
 
-		# Generate thumbnail if it doesn't exist or is older than source
-		if [[ ! -f "$thumbnail" ]] || [[ "$img" -nt "$thumbnail" ]]; then
-			generate_thumbnail "$img" "$thumbnail"
-		fi
-
-		# Output menu item (filename and path)
-		echo -en "img:$thumbnail\x00info:$(basename "$img")\x1f$img\n"
+		generate_thumbnail "$img" "$thumbnail"
+		echo -en "img:$thumbnail\x00info:$base_name\x1f$img\n"
 	done
 }
 
-# Use wofi to display grid of wallpapers - IMPORTANT: added --sort-order=default
-selected=$(
-	generate_menu | wofi --show dmenu \
-		--cache-file /dev/null \
-		--define "image-size=${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" \
-		--columns 3 \
-		--allow-images \
-		--insensitive \
-		--sort-order=default \
-		--prompt "Select Wallpaper" \
-		--conf ~/.config/wofi/wallpaper.conf
-)
+# Set the wallpaper using hyprpaper
+set_wallpaper() {
+	local wallpaper_path="$1"
 
-# Set wallpaper if one was selected
-if [ -n "$selected" ]; then
-	# Remove the img: prefix to get the cached thumbnail path
-	thumbnail_path="${selected#img:}"
-
-	# Check if random wallpaper was selected
-	if [[ "$thumbnail_path" == "$SHUFFLE_ICON" ]]; then
-		# Select a random wallpaper from the directory
-		original_path=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) | shuf -n 1)
-	else
-		# Get the original filename from the thumbnail path
-		original_filename=$(basename "${thumbnail_path%.*}")
-
-		# Find the corresponding original file in the wallpaper directory
-		original_path=$(find "$WALLPAPER_DIR" -type f -name "${original_filename}.*" | head -n1)
+	if [[ -f "$wallpaper_path" ]]; then
+		hyprctl hyprpaper preload "$wallpaper_path"
+		hyprctl hyprpaper wallpaper ",$wallpaper_path"
+		echo "$wallpaper_path" >"$CURRENT_WALLPAPER_FILE"
 	fi
+}
 
-	# Ensure a valid wallpaper was found before proceeding
-	if [ -n "$original_path" ]; then
-		# Set wallpaper using swww with the original file
-		hyprctl hyprpaper preload "$original_path"
-		hyprctl hyprpaper wallpaper ",$original_path"
-		# Save the selection for persistence
-		echo "$original_path" >"$HOME/.cache/current_wallpaper"
+# Handle wallpaper selection
+handle_selection() {
+	local selected="$1"
 
-		# Optional: Notify user
-		hyprctl notify 3000 info "Wallpaper has been updated"
-	else
-		hyprctl notify 4000 error "Could not find the original wallpaper file."
+	if [[ -n "$selected" ]]; then
+		local thumbnail_path="${selected#img:}"
+		local original_filename
+		original_filename="$(basename "${thumbnail_path%.*}")"
 
+		local wallpaper_path
+		wallpaper_path="$(find "$WALLPAPER_DIR" -type f -iname "${original_filename}.*" | head -n 1)"
+
+		[[ -n "$wallpaper_path" ]] && set_wallpaper "$wallpaper_path"
 	fi
-fi
+}
+
+# Main function
+main() {
+	cleanup_cache
+
+	local selected
+	selected=$(
+		generate_menu | wofi --show dmenu \
+			--cache-file /dev/null \
+			--define "image-size=${THUMBNAIL_WIDTH}x${THUMBNAIL_HEIGHT}" \
+			--columns 2 \
+			--allow-images \
+			--insensitive \
+			--sort-order=default \
+			--conf ~/.config/wofi/wallpaper_selector/wallpaper.conf
+	)
+
+	handle_selection "$selected"
+}
+
+main
