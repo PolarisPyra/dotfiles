@@ -78,7 +78,7 @@ main() {
         --allow-images \
         --insensitive \
         --sort-order=default \
-        --conf ~/.config/wofiw/wallpaper.conf)
+        --conf ~/.config/wofi/wallpaper.conf)
     
     handle_selection "$selected"
 }
