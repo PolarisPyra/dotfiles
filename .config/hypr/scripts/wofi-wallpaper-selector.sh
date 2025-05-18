@@ -70,7 +70,6 @@ handle_selection() {
 main() {
     ensure_cache_dir
     
-    # Use process substitution to avoid creating temporary files
     local selected
     selected=$(generate_menu | wofi --show dmenu \
         --cache-file /dev/null \
