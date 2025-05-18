@@ -7,7 +7,7 @@
 }
 
 .background {
-	background-color: #232136;
+	background-color: @background;
 }
 
 .volume,
@@ -21,7 +21,7 @@
 .power-menu #power-btn {
 	background: transparent;
 	border: none;
-	color: #e0def4;
+	color: @foreground;
 	box-shadow: none;
 	padding: 2px 6px;
 }
@@ -32,7 +32,7 @@
 }
 
 .power-menu #power-btn:active {
-	color: #44415a;
+	color: @color4;
 	border: none;
 	outline: none;
 	box-shadow: none;
@@ -43,13 +43,13 @@
 	padding: 0 2px;
 	border: none;
 	background: transparent;
-	color: #6e6a86;
+	color: @color8;
 	transition: all 0.3s ease-in-out;
 	opacity: 0.7;
 }
 
 .workspaces .item.focused {
-	color: #ea9a97;
+	color: @color1;
 	background: transparent;
 	opacity: 1;
 }
@@ -63,10 +63,10 @@
 .popup-volume,
 .popup-clock,
 .popup-music {
-	background-color: rgba(26, 27, 38, 0.8);
-	border: 2px solid #6e6a86;
+	background-color: @background;
+	border: 2px solid @color8;
 	border-radius: 10px;
-	color: #e0def4;
+	color: @foreground;
 	padding: 8px 12px;
 }
 
