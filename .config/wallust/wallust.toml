@@ -8,3 +8,6 @@ ghostty.target = "/home/polaris/.dotfiles/.config/ghostty/wallust.conf"
 
 hypr.template = 'colors-hypr.conf'
 hypr.target = '/home/polaris/.dotfiles/.config/hypr/colors-hypr.conf'
+
+ironbar.template = 'colors-ironbar.conf'
+ironbar.target = '/home/polaris/.dotfiles/.config/ironbar/colors-ironbar.conf'
