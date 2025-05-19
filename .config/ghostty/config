@@ -1,7 +1,6 @@
 #Typography
 font-family = JetBrains Mono
-font-family-bold = Symbols Nerd Font
-font-size = 15
+font-size = 12
 
 #window 
 window-padding-balance = true
