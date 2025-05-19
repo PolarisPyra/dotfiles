@@ -1,26 +1,4 @@
-#Typography
-font-family = JetBrains Mono
-font-family-bold = Symbols Nerd Font
-font-size = 15
-
-
-#theme
-theme=/home/polaris/.dotfiles/.config/ghostty/wallust.conf
-
-#background
-background-opacity = 0.9
-background-blur-radius = 20
-
-#window 
-window-padding-balance = true
-window-save-state = always
-
-#keybinds
-keybind = ctrl+shift+k=new_split:up
-keybind = ctrl+shift+j=new_split:down
-keybind = ctrl+shift+l=new_split:right
-keybind = ctrl+shift+h=new_split:left
-keybind = ctrl+shift+t=new_tab
-
-### mouse ###
-mouse-hide-while-typing = true
+  theme = rose-pine
+  window-padding-x = 4
+  window-padding-y = 4
+	background-opacity = 0.9
