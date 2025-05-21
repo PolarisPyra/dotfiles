@@ -26,7 +26,7 @@
         },
         {
           "type": "music",
-          "player_type": "mpris",
+          "player_type": "mpd",
           "format": "{title} / {artist}"
         }
       ],
@@ -102,7 +102,7 @@
         },
         {
           "type": "music",
-          "player_type": "mpris",
+          "player_type": "mpd",
           "format": "{title} / {artist}"
         }
       ],
