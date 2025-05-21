@@ -15,11 +15,11 @@
     status_update_interval_ms: 1000,
     select_current_song_on_change: false,
     album_art: (
-        method: Auto,
-        max_size_px: (width: 1200, height: 1200),
+        method: Kitty,
+        max_size_px: (width: 0, height: 0),
         disabled_protocols: ["http://", "https://"],
-        vertical_align: Center,
-        horizontal_align: Center,
+        vertical_align: Top,
+        horizontal_align: Left,
     ),
     keybinds: (
         global: {
@@ -115,8 +115,8 @@
         (
             name: "Queue",
             pane: Split(
-                direction: Horizontal,
-                panes: [(size: "40%", pane: Pane(AlbumArt)), (size: "60%", pane: Pane(Queue))],
+                direction: Vertical,
+                panes: [ (size: "80%", pane: Pane(Queue)), (size: "20%", pane: Pane(AlbumArt))],
             ),
         ),
         (
