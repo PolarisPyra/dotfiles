@@ -14,12 +14,12 @@
     enable_mouse: true,
     status_update_interval_ms: 1000,
     select_current_song_on_change: false,
-    album_art: (
-        method: Kitty,
-        max_size_px: (width: 0, height: 0),
+ album_art: (
+        method: Auto,
+        max_size_px: (width: 500, height: 500),
         disabled_protocols: ["http://", "https://"],
-        vertical_align: Top,
-        horizontal_align: Left,
+        vertical_align: Center,
+        horizontal_align: Center,
     ),
     keybinds: (
         global: {
@@ -30,12 +30,9 @@
             "<Tab>":   NextTab,
             "<S-Tab>": PreviousTab,
             "1":       SwitchToTab("Queue"),
-            "2":       SwitchToTab("Directories"),
-            "3":       SwitchToTab("Artists"),
-            "4":       SwitchToTab("Album Artists"),
-            "5":       SwitchToTab("Albums"),
-            "6":       SwitchToTab("Playlists"),
-            "7":       SwitchToTab("Search"),
+            "2":       SwitchToTab("Album Artists"),
+            "3":       SwitchToTab("Find"),
+            "4":       SwitchToTab("Directories"),
             "q":       Quit,
             ">":       NextTrack,
             "p":       TogglePause,
@@ -112,37 +109,31 @@
         album_sort_by: Date,
     ),
     tabs: [
-        (
+       (
             name: "Queue",
             pane: Split(
-                direction: Vertical,
-                panes: [ (size: "80%", pane: Pane(Queue)), (size: "20%", pane: Pane(AlbumArt))],
+                direction: Horizontal,
+                panes: [(size: "70%", pane: Pane(Queue)), (size: "50%", pane: Pane(AlbumArt))],
             ),
         ),
-        (
-            name: "Directories",
-            pane: Pane(Directories),
-        ),
-        (
-            name: "Artists",
-            pane: Pane(Artists),
-        ),
-        (
+         (
             name: "Album Artists",
             pane: Pane(AlbumArtists),
         ),
-        (
-            name: "Albums",
-            pane: Pane(Albums),
-        ),
-        (
-            name: "Playlists",
-            pane: Pane(Playlists),
-        ),
-        (
-            name: "Search",
+
+          (
+            name: "Find",
             pane: Pane(Search),
         ),
+
+        (
+            name: "Directories",
+            pane: Pane(Directories),
+        ), 
+       
+       
+      
+      
     ],
 )
 
