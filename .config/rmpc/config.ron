@@ -19,7 +19,7 @@
         max_size_px: (width: 500, height: 500),
         disabled_protocols: ["http://", "https://"],
         vertical_align: Center,
-        horizontal_align: Center,
+        horizontal_align: Right,
     ),
     keybinds: (
         global: {
