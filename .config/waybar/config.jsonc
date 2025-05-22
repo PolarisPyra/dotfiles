@@ -8,7 +8,7 @@
   "margin-bottom": 8,
   "margin-left": 50,
 
-  "modules-left": ["custom/os_btn", "hyprland/workspaces", "wlr/taskbar"],
+  "modules-left": ["custom/os_btn", "hyprland/workspaces"],
 
   "modules-center": ["clock"],
 
