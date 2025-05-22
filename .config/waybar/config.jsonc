@@ -8,16 +8,19 @@
   "margin-bottom": 8,
   "margin-left": 0,
 
-  "modules-left": ["custom/os_btn", "hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces"],
 
   "modules-center": ["clock"],
 
   "modules-right": ["tray", "network", "pulseaudio"],
 
-  "sway/workspaces": {
+  "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "tooltip": false
+    "tooltip": false,
+    "persistent-workspaces": {
+      "*": 5 // 5 workspaces by default on every monitor
+    }
   },
 
   "wlr/taskbar": {
