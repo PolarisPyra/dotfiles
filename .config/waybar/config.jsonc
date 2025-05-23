@@ -42,9 +42,9 @@
   },
 
   "network": {
-    "format-wifi": "󰤢 {bandwidthDownBits}",
-    "format-ethernet": "󰤢 {bandwidthDownBits}",
-    "format-disconnected": "󰤠 No Network",
+    "format-wifi": "󰤢  {bandwidthDownBits}",
+    "format-ethernet": "󰤢  {bandwidthDownBits}",
+    "format-disconnected": "󰤠  No Network",
     "interval": 5,
     "tooltip": false
   },

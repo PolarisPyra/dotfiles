@@ -75,6 +75,7 @@ plugins=(git zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 
+alias wr='pkill waybar && hyprctl dispatch exec waybar'
 
 # User configuration
 
