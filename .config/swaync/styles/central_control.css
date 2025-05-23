@@ -1,24 +1,16 @@
-@define-color rosewater #f5e0dc;
-@define-color flamingo #f2cdcd;
-@define-color pink #f5c2e7;
-@define-color mauve #cba6f7;
-@define-color red #f38ba8;
-@define-color maroon #eba0ac;
-@define-color peach #fab387;
-@define-color yellow #f9e2af;
-@define-color green #a6e3a1;
-@define-color teal #94e2d5;
-@define-color sky #89dceb;
-@define-color sapphire #74c7ec;
-@define-color blue #89b4fa;
-@define-color lavender #b4befe;
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ea9a97;
+@define-color pine #3e8fb0;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
 
-@define-color text #cdd6f4;
+@define-color text #e0def4;
 
-@define-color base #1e1e2e;
-@define-color surface #313244;
-@define-color hover #45475a;
-@define-color active #b4befe;
+@define-color base #232136;
+@define-color surface #2a273f;
+@define-color hover #44415a;
+@define-color active #c4a7e7;
 
 * {
   color: @text;
@@ -38,7 +30,7 @@
 .control-center {
   background: @base;
   border-radius: 20px;
-  border: 2px solid @lavender;
+  border: 2px solid @iris;
   margin: 0;
   padding: 8px;
 }
@@ -87,17 +79,29 @@
   .notification-row
   .notification-background
   .notification.critical {
-  background-color: @surface;
+  background-color: transparent;
   border-radius: 20px;
   margin: 4px 0;
   padding: 8px 8px 8px 16px;
+  border: none;
+}
+
+.control-center
+  .notification-row
+  .notification-background
+  .notification {
+  background-color: @base;
+  border-radius: 16px;
+  margin: 4px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .control-center
   .notification-row
   .notification-background
   .notification.critical {
-  color: @red;
+  color: @love;
+  border: 2px solid @love;
 }
 
 .control-center
@@ -152,7 +156,7 @@ trough {
 
 trough highlight {
   padding: 8px;
-  background: @lavender;
-  border: 2px solid @lavender;
+  background: @iris;
+  border: 2px solid @iris;
   border-radius: 20px;
 }

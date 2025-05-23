@@ -28,7 +28,8 @@ tooltip label {
 #network,
 #tray,
 #workspaces,
-#pulseaudio {
+#pulseaudio,
+#custom-notification {
   margin: 4px;
   padding: 4px 8px;
   color: #e0def4;

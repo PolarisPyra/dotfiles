@@ -1,29 +1,16 @@
-@define-color rosewater #f5e0dc;
-@define-color flamingo #f2cdcd;
-@define-color pink #f5c2e7;
-@define-color mauve #cba6f7;
-@define-color red #f38ba8;
-@define-color maroon #eba0ac;
-@define-color peach #fab387;
-@define-color yellow #f9e2af;
-@define-color green #a6e3a1;
-@define-color teal #94e2d5;
-@define-color sky #89dceb;
-@define-color sapphire #74c7ec;
-@define-color blue #89b4fa;
-@define-color lavender #b4befe;
-@define-color text #cdd6f4;
-@define-color subtext1 #bac2de;
-@define-color subtext0 #a6adc8;
-@define-color overlay2 #9399b2;
-@define-color overlay1 #7f849c;
-@define-color overlay0 #6c7086;
-@define-color surface2 #585b70;
-@define-color surface1 #45475a;
-@define-color surface0 #313244;
-@define-color base #1e1e2e;
-@define-color mantle #181825;
-@define-color crust #11111b;
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ea9a97;
+@define-color pine #3e8fb0;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
+
+@define-color text #e0def4;
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color base #232136;
+@define-color surface #2a273f;
+@define-color overlay #393552;
 
 * {
   color: @text;
@@ -40,9 +27,9 @@
 }
 
 .floating-notifications.background .notification-row .notification-background {
-  background: @base;
+  background: transparent;
   border-radius: 20px;
-  border: 2px solid @lavender;
+  border: none;
   margin: 0;
   padding: 8px 8px 0 8px;
 }
@@ -51,15 +38,17 @@
   .notification-row
   .notification-background
   .notification {
-  padding: 0.4rem;
-  border-radius: 0.8rem;
+  background-color: @base;
+  border-radius: 16px;
+  margin: 4px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .floating-notifications.background
   .notification-row
   .notification-background
   .notification.critical {
-  border: 2px solid @red;
+  border: 2px solid @love;
 }
 
 .floating-notifications.background
@@ -87,7 +76,7 @@
   > *
   .notification-action {
   border-radius: 0.5rem;
-  background-color: alpha(@crust, 0.95);
+  background-color: alpha(@surface, 0.95);
   margin: 0.4rem;
   border: 1px solid transparent;
 }
@@ -99,8 +88,8 @@
   > *:last-child
   > *
   .notification-action:hover {
-  background-color: @hover;
-  border: 1px solid @lavender;
+  background-color: @overlay;
+  border: 1px solid @iris;
 }
 
 .floating-notifications.background
@@ -110,7 +99,7 @@
   > *:last-child
   > *
   .notification-action:active {
-  background-color: @lavender;
+  background-color: @iris;
   color: @text;
 }
 
@@ -143,22 +132,22 @@
   .notification-row
   .notification-background
   .close-button:hover {
-  background-color: @lavender;
+  background-color: @iris;
 }
 
 .floating-notifications.background
   .notification-row
   .notification-background
   .close-button:active {
-  background-color: @lavender;
+  background-color: @iris;
   color: @text;
 }
 
 .notification.critical progress {
-  background-color: @lavender;
+  background-color: @iris;
 }
 
 .notification.low progress,
 .notification.normal progress {
-  background-color: @lavender;
+  background-color: @iris;
 }
