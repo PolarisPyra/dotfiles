@@ -4,9 +4,7 @@
 @define-color pine #3e8fb0;
 @define-color foam #9ccfd8;
 @define-color iris #c4a7e7;
-
 @define-color text #e0def4;
-
 @define-color base #232136;
 @define-color surface #2a273f;
 @define-color hover #44415a;
@@ -79,21 +77,17 @@
   .notification-row
   .notification-background
   .notification.critical {
-  background-color: transparent;
+  background-color: @surface;
   border-radius: 20px;
   margin: 4px 0;
   padding: 8px 8px 8px 16px;
   border: none;
 }
 
-.control-center
-  .notification-row
-  .notification-background
-  .notification {
+.control-center .notification-row .notification-background .notification {
   background-color: @base;
   border-radius: 16px;
   margin: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .control-center
@@ -108,7 +102,7 @@
   .notification-row
   .notification-background
   .notification
-  > *:last-child
+  > :last-child
   > * {
   min-height: 3.4em;
 }
@@ -117,7 +111,7 @@
   .notification-row
   .notification-background
   .notification
-  > *:last-child
+  > :last-child
   > *
   .notification-action {
   background-color: @surface;
@@ -128,17 +122,16 @@
   .notification-row
   .notification-background
   .notification
-  > *:last-child
+  > :last-child
   > *
   .notification-action:hover {
   background-color: @hover;
 }
 
 .control-center .notification-row .notification-background .close-button {
-  background: transparent;
+  background: @surface;
   border-radius: 20px;
   color: @text;
-  background-color: @surface;
   margin: 0px;
   padding: 4px;
 }
@@ -159,4 +152,26 @@ trough highlight {
   background: @iris;
   border: 2px solid @iris;
   border-radius: 20px;
+}
+
+.image {
+  margin: 10px 20px 10px 0px;
+}
+
+.summary {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.body {
+  font-size: 0.8rem;
+}
+
+.notification.critical progress {
+  background-color: @iris;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: @iris;
 }

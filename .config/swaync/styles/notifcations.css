@@ -4,7 +4,6 @@
 @define-color pine #3e8fb0;
 @define-color foam #9ccfd8;
 @define-color iris #c4a7e7;
-
 @define-color text #e0def4;
 @define-color muted #6e6a86;
 @define-color subtle #908caa;
@@ -27,7 +26,7 @@
 }
 
 .floating-notifications.background .notification-row .notification-background {
-  background: transparent;
+  background: @surface;
   border-radius: 20px;
   border: none;
   margin: 0;
@@ -35,70 +34,68 @@
 }
 
 .floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification {
+.notification-row
+.notification-background
+.notification {
   background-color: @base;
   border-radius: 16px;
   margin: 4px;
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification.critical {
+.notification-row
+.notification-background
+.notification.critical {
   border: 2px solid @love;
 }
 
 .floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification
-  .notification-content {
+.notification-row
+.notification-background
+.notification
+.notification-content {
   margin: 1rem;
 }
 
 .floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification
-  > *:last-child
-  > * {
+.notification-row
+.notification-background
+.notification
+> :last-child
+> * {
   min-height: 3.4em;
 }
 
 .floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification
-  > *:last-child
-  > *
-  .notification-action {
+.notification-row
+.notification-background
+.notification
+> :last-child
+> *
+.notification-action {
   border-radius: 0.5rem;
-  background-color: alpha(@surface, 0.95);
+  background-color: @surface;
   margin: 0.4rem;
-  border: 1px solid transparent;
 }
 
 .floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification
-  > *:last-child
-  > *
-  .notification-action:hover {
+.notification-row
+.notification-background
+.notification
+> :last-child
+> *
+.notification-action:hover {
   background-color: @overlay;
   border: 1px solid @iris;
 }
 
 .floating-notifications.background
-  .notification-row
-  .notification-background
-  .notification
-  > *:last-child
-  > *
-  .notification-action:active {
+.notification-row
+.notification-background
+.notification
+> :last-child
+> *
+.notification-action:active {
   background-color: @iris;
   color: @text;
 }
@@ -117,28 +114,28 @@
 }
 
 .floating-notifications.background
-  .notification-row
-  .notification-background
-  .close-button {
-  background: transparent;
+.notification-row
+.notification-background
+.close-button {
+  background: @base;
   border-radius: 20px;
   color: @text;
-  background-color: alpha(#fff, 0.1);
+  background-color: @surface;
   margin: 0px;
   padding: 4px;
 }
 
 .floating-notifications.background
-  .notification-row
-  .notification-background
-  .close-button:hover {
+.notification-row
+.notification-background
+.close-button:hover {
   background-color: @iris;
 }
 
 .floating-notifications.background
-  .notification-row
-  .notification-background
-  .close-button:active {
+.notification-row
+.notification-background
+.close-button:active {
   background-color: @iris;
   color: @text;
 }

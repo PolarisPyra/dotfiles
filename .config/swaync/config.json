@@ -36,25 +36,24 @@
       "app-name": "Spotify"
     }
   },
-  "widgets": [
-    "label",
-
-    "volume",
-    "title",
-    "notifications"
-  ],
+  "widgets": ["label", "volume", "mpris", "title", "notifications"],
   "widget-config": {
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
       "button-text": "󰎟"
     },
-  
+
     "label": {
       "max-lines": 0,
       "text": "Volume"
     },
-   
+
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 20
+    },
+
     "volume": {
       "label": " ",
       "expand-button-label": "",
@@ -63,6 +62,5 @@
       "show-per-app-icon": true,
       "show-per-app-label": false
     }
-    
   }
 }

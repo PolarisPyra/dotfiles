@@ -6,8 +6,8 @@
   font-weight: bold;
   font-size: 12px;
   padding: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 window#waybar {
@@ -33,7 +33,6 @@ tooltip label {
   padding: 2px 4px;
   color: #e0def4;
 }
-
 
 #tray menu {
   background-color: #232136;
