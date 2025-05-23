@@ -57,18 +57,15 @@ tooltip label {
   color: #e0def4;
   margin-right: 0.2cm;
   margin-left: 0.2cm;
-  text-shadow: 0px 0px 4px rgb(135, 135, 135);
 }
 
 #workspaces button.active {
-  color: #e0def4;
-  text-shadow: 0px 0px 6px #e0def4;
+  color: #eb6f92;
 }
 
 #workspaces button:hover {
   transition-duration: 120ms;
-  color: #e0def4;
-  text-shadow: 0px 0px 8px #e0def4;
+  color: #9ccfd8;
 }
 
 #workspaces button.current_output {
