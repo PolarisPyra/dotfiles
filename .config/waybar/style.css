@@ -25,15 +25,15 @@ tooltip label {
 
 #clock,
 #battery,
-#network,
 #tray,
 #workspaces,
 #pulseaudio,
 #custom-notification {
-  margin: 4px;
-  padding: 4px 8px;
+  margin: 2px;
+  padding: 2px 4px;
   color: #e0def4;
 }
+
 
 #tray menu {
   background-color: #232136;

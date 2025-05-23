@@ -10,7 +10,7 @@
 
   "modules-center": ["clock"],
 
-  "modules-right": ["custom/notification", "tray", "network", "pulseaudio"],
+  "modules-right": ["custom/notification", "tray", "pulseaudio"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -34,12 +34,12 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='#c4a7e7'>󰂞 </span>",
-      "none": "󰂚 ",
-      "dnd-notification": "<span foreground='#c4a7e7'>󰂞 </span>",
-      "dnd-none": "󰂛 ",
-      "inhibited-notification": "<span foreground='#c4a7e7'>󰂞 </span>",
-      "inhibited-none": "󰂚 ",
+      "notification": "<span foreground='#c4a7e7'>󰂞</span>",
+      "none": "󰂚",
+      "dnd-notification": "<span foreground='#c4a7e7'>󰂞</span>",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "<span foreground='#c4a7e7'>󰂞</span>",
+      "inhibited-none": "󰂚",
       "dnd-inhibited-notification": "<span foreground='#c4a7e7'>󰂞 </span>",
       "dnd-inhibited-none": "󰂛 "
     },
@@ -49,14 +49,6 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
-  },
-
-  "network": {
-    "format-wifi": "󰤢  {bandwidthDownBits}",
-    "format-ethernet": "󰤢  {bandwidthDownBits}",
-    "format-disconnected": "󰤠  No Network",
-    "interval": 5,
-    "tooltip": false
   },
 
   "pulseaudio": {
