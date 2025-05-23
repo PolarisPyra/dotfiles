@@ -23,14 +23,6 @@
     }
   },
 
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "spacing": 3,
-    "icon-size": 28,
-    "on-click": "activate",
-    "tooltip-format": "{title}"
-  },
-
   "tray": {
     "spacing": 10,
     "tooltip": false
@@ -54,10 +46,10 @@
     "max-volume": 150,
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon} {volume}%",
-    "format-icons": ["", "", " "],
+    "format-icons": [" ", " ", "  "],
     "nospacing": 1,
-    "format-muted": " ",
-    "on-click": "pavucontrol",
+    "format-muted": "  ",
+    "on-click": "~/.config/waybar/scripts/audio_changer.py",
     "tooltip": false
   }
 }

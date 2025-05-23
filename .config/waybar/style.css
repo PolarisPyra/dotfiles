@@ -4,7 +4,7 @@
   min-height: 0;
   font-family: Noto Sans;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   padding: 0px;
   padding-left: 0px;
   padding-right: 0px;
@@ -31,7 +31,6 @@ tooltip label {
 #pulseaudio {
   margin: 4px;
   padding: 4px 8px;
-  border-radius: 8px;
   color: #e0def4;
 }
 
