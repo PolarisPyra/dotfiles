@@ -8,7 +8,7 @@
 
   "modules-left": ["hyprland/workspaces"],
 
-  "modules-right": ["custom/notification", "tray", "clock", "pulseaudio"],
+  "modules-right": ["custom/notification", "tray", "pulseaudio", "clock"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -52,8 +52,8 @@
   "pulseaudio": {
     "scroll-step": 5,
     "max-volume": 150,
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}%",
+    "format": "{volume}%",
+    "format-bluetooth": "{volume}%",
     "format-icons": [" ", " ", "  "],
     "nospacing": 1,
     "format-muted": "  ",
