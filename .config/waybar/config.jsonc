@@ -8,7 +8,7 @@
 
   "modules-left": ["hyprland/workspaces"],
 
-  "modules-right": ["custom/notification", "tray", "pulseaudio", "clock"],
+  "modules-right": ["tray", "custom/notification", "pulseaudio", "clock"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
