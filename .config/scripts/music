@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Prompt user to select a file from the MPD database
+file="$(mpc listall | fuzzel --dmenu --width=80)" || exit 0
+
+# Check if a file was selected
+if [ -n "$file" ]; then
+    # Notify the user
+    notify-send "Playing $file"
+
+    # Clear the current playlist
+    mpc clear
+
+    # Add the selected file to the playlist
+    mpc add "$file"
+
+    # Start playback
+    mpc play
+fi
