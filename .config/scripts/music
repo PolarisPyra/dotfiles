@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Show options and song list in menu
-choice="$(printf "%s\n" "⏯ Pause/Play" "🗑 Clear Playlist" "$(mpc listall)" | fuzzel --dmenu --width=80)" || exit 0
+choice="$(printf "%s\n" "⏯ Pause/Play" "🗑 Clear Playlist" "$(mpc listall)" | fuzzel --dmenu --width=100)" || exit 0
 
 # Handle selection
 if [ "$choice" = "⏯ Pause/Play" ]; then
