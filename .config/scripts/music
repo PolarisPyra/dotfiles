@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # Show options and song list in menu
-choice="$(printf "%s\n" "⏯ Pause/Play" "🗑 Clear Playlist" "$(mpc listall)" | fuzzel --dmenu --width=100)" || exit 0
+choice="$(printf "%s\n" "󰐎 Pause/Play" " Clear Playlist" "$(mpc listall)" | fuzzel --dmenu --width=100)" || exit 0
 
 # Handle selection
-if [ "$choice" = "⏯ Pause/Play" ]; then
+if [ "$choice" = "󰐎 Pause/Play" ]; then
     mpc toggle
     notify-send "Toggled Play/Pause"
-elif [ "$choice" = "🗑 Clear Playlist" ]; then
+elif [ "$choice" = " Clear Playlist" ]; then
     mpc clear
     notify-send "Cleared Playlist"
 elif [ -n "$choice" ]; then
