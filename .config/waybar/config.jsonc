@@ -57,7 +57,7 @@
     "format-icons": [" ", " ", "  "],
     "nospacing": 1,
     "format-muted": "  ",
-    "on-click": "/home/polaris/.dotfiles/.config/scripts/audio.sh",
+    "on-click": "~/.config/scripts/audio.sh",
     "tooltip": false
   }
 }
