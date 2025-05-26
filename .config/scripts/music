@@ -1,19 +1,18 @@
 #!/usr/bin/env bash
 
-# Prompt user to select a file from the MPD database
-file="$(mpc listall | fuzzel --dmenu --width=80)" || exit 0
+# Show options and song list in menu
+choice="$(printf "%s\n" "⏯ Pause/Play" "🗑 Clear Playlist" "$(mpc listall)" | fuzzel --dmenu --width=80)" || exit 0
 
-# Check if a file was selected
-if [ -n "$file" ]; then
-    # Notify the user
-    notify-send "Playing $file"
-
-    # Clear the current playlist
+# Handle selection
+if [ "$choice" = "⏯ Pause/Play" ]; then
+    mpc toggle
+    notify-send "Toggled Play/Pause"
+elif [ "$choice" = "🗑 Clear Playlist" ]; then
     mpc clear
-
-    # Add the selected file to the playlist
-    mpc add "$file"
-
-    # Start playback
+    notify-send "Cleared Playlist"
+elif [ -n "$choice" ]; then
+    notify-send "Playing $choice"
+    mpc clear
+    mpc add "$choice"
     mpc play
 fi
