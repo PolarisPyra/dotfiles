@@ -21,7 +21,7 @@ speakers () {
 }
 # Menu to choose output
 choosespeakers() {
-  choice=$(printf "Headphones\nSpeakers\nBluetooth" | fuzzel --dmenu --prompt "Choose output: ")
+  choice=$(printf "Headphones\nSpeakers" | fuzzel --dmenu --prompt "Choose output: ")
   case "$choice" in
     Headphones) headphones ;;
     Speakers) speakers ;;
