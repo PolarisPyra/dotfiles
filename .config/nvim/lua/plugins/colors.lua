@@ -3,8 +3,8 @@ return {
 	name = "rose-pine",
 	config = function()
 		require("rose-pine").setup({
-			variant = "main",
-			dark_variant = "main",
+			variant = "moon",
+			dark_variant = "moon",
 			dim_inactive_windows = false,
 			extend_background_behind_borders = true,
 
@@ -13,7 +13,7 @@ return {
 				legacy_highlights = true,
 			},
 			styles = {
-				transparency = true,
+				transparency = false,
 			},
 		})
 
