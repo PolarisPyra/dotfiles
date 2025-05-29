@@ -1,4 +1,5 @@
 
 .config/mpd/mpd.log
+.config/mpd/mpd.db
 .config/mpd/mpdstate
 .config/waypaper/config.ini
