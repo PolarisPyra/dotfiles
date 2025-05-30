@@ -27,7 +27,7 @@ config.keys = {
 	-- splitting
 	{
 		mods = "LEADER",
-		key = "-",
+		key = "v",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
