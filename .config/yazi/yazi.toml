@@ -1,34 +1,33 @@
 
 [mgr]
+
 linemode     = "size_and_mtime"
 show_hidden  = false
 sort_by      = "natural"
 mouse_events = []
 
 [preview]
+
 wrap       = "yes"
 max_width  = 1500
 max_height = 1500
 
 [input]
+
 cursor_blink = true
 
 [opener]
+
 edit = [
 	{ run = '${EDITOR:=nvim} "$@"', desc = "$EDITOR", block = true },
 ]
+
 play = [
 	{ run = 'mpv --force-window "$@"' },
 
 ]
+
 extract = [
 	{ run = 'ya pub extract --list "$@"', desc = "Extract here" },
 	{ run = '/Applications/MacZip.app/Contents/MacOS/MacZip "$1"', orphan = true, desc = "MacZip" }
 ]
-
-
-[open]
-prepend_rules = [
-	{ name = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "subtitle", "edit" ] },
-]
-
