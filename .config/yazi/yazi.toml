@@ -16,7 +16,79 @@ max_height = 1500
 
 cursor_blink = true
 
-[opener]
+[open]
+rules = [
+  { name = "*/", use = [
+    "edit",
+    "open",
+    "reveal",
+  ] },
+
+  { mime = "text/*", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "image/*", use = [
+    "open",
+    "reveal",
+  ] },
+  { mime = "video/*", use = [
+    "play",
+    "reveal",
+  ] },
+  { mime = "audio/*", use = [
+    "play",
+    "reveal",
+  ] },
+  { mime = "inode/empty", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  { mime = "application/json", use = [
+    "edit",
+    "reveal",
+  ] },
+  { mime = "*/javascript", use = [
+    "edit",
+    "reveal",
+  ] },
+
+  { mime = "application/zip", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/gzip", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/r", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/bzip", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/bzip2", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/7z-compressed", use = [
+    "extract",
+    "reveal",
+  ] },
+  { mime = "application/rar", use = [
+    "extract",
+    "reveal",
+  ] },
+
+  { mime = "*", use = [
+    "open",
+    "reveal",
+  ] },
+]
+
 
 edit = [
 	{ run = '${EDITOR:=nvim} "$@"', desc = "$EDITOR", block = true },
@@ -31,3 +103,4 @@ extract = [
 	{ run = 'ya pub extract --list "$@"', desc = "Extract here" },
 	{ run = '/Applications/MacZip.app/Contents/MacOS/MacZip "$1"', orphan = true, desc = "MacZip" }
 ]
+
