@@ -1,5 +1,5 @@
 
-[mgr]
+[manager]
 linemode     = "size"
 show_hidden  = false
 sort_by      = "natural"
@@ -35,4 +35,13 @@ subtitle = [
 [open]
 prepend_rules = [
 	{ name = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "subtitle", "edit" ] },
+]
+
+[plugin]
+prepend_fetchers = [
+	{ id = "git", name = "*", run = "git" },
+	{ id = "git", name = "*/", run = "git" },
+
+	{ id = "mactag", name = "*", run = "mactag" },
+	{ id = "mactag", name = "*/", run = "mactag" },
 ]
