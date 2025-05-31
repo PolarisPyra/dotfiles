@@ -1,6 +1,6 @@
 
 [mgr]
-linemode     = "size"
+linemode     = "size_and_mtime"
 show_hidden  = false
 sort_by      = "natural"
 mouse_events = []
@@ -31,3 +31,4 @@ extract = [
 prepend_rules = [
 	{ name = "*.{ass,srt,ssa,sty,sup,vtt}", use = [ "subtitle", "edit" ] },
 ]
+
