@@ -63,3 +63,6 @@ eval "$(starship init zsh)"
 fi
 
 export EDITOR=nvim
+
+# GOLANG
+export PATH="$PATH:$(go env GOPATH)/bin"
