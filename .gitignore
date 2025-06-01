@@ -4,3 +4,4 @@
 .config/mpd/mpdstate
 .config/waypaper/config.ini
 .config/mpd/mpd.db
+secrets/
