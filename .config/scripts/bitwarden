@@ -30,4 +30,4 @@ if [ "$action" = "Copy Username" ]; then
 elif [ "$action" = "Copy Password" ]; then
     bw get password "$item_id" --session "$BW_SESSION" | wl-copy
     notify-send "Password copied to clipboard"
-fi
+fix
