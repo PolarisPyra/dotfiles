@@ -22,7 +22,7 @@ item_name="${choice%% [*}"
 item_id="$(echo "$items_json" | jq -r --arg name "$item_name" '.[] | select(.name == $name) | .id')"
 
 # Show options for the selected item
-action="$(printf "%s\n" "Copy Username" "Copy Password" | fuzzel --dmenu --width=100)" || exit 0
+action="$(printf "%s\n" "Copy Username" "Copy Password" | fuzzel --dmenu)" || exit 0
 
 if [ "$action" = "Copy Username" ]; then
     bw get username "$item_id" --session "$BW_SESSION" | wl-copy
