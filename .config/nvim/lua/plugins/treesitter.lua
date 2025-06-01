@@ -5,7 +5,7 @@ return {
 		local configs = require("nvim-treesitter.configs")
 
 		configs.setup({
-			ensure_installed = { "tsx", "toml", "json", "css", "html", "lua" },
+			ensure_installed = { "tsx", "toml", "json", "css", "html", "lua", "odin" },
 			auto_install = true,
 			sync_install = false,
 			highlight = {

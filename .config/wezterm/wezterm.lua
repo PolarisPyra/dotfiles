@@ -3,11 +3,8 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font("FiraCode Nerd Font")
 config.font_size = 12
-
 config.enable_tab_bar = false
-
 config.color_scheme = "rose-pine-moon"
-
 -- Override color scheme settings bc highlight fucking sucks for some reason
 config.colors = {
 	selection_bg = "#44415a",
@@ -27,7 +24,7 @@ config.keys = {
 	-- splitting
 	{
 		mods = "LEADER",
-		key = "v",
+		key = "-",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
@@ -39,6 +36,26 @@ config.keys = {
 		mods = "LEADER",
 		key = "m",
 		action = wezterm.action.TogglePaneZoomState,
+	},
+	{
+		key = "c",
+		mods = "LEADER",
+		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
+	},
+	{
+		key = "n",
+		mods = "LEADER",
+		action = wezterm.action.ActivateTabRelative(1),
+	},
+	{
+		key = "w",
+		mods = "LEADER",
+		action = wezterm.action.ShowTabNavigator,
+	},
+	{
+		key = "p",
+		mods = "LEADER",
+		action = wezterm.action.ActivateTabRelative(-1),
 	},
 }
 
