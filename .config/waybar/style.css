@@ -1,32 +1,31 @@
 * {
   border: none;
-  border-radius: 0; /* Changed back to 0 as per your previous design */
+  border-radius: 0;
   min-height: 0;
-  font-family: Noto Sans; /* Changed to your preferred font */
-  font-weight: bold; /* Retained */
-  font-size: 12px; /* Changed to your preferred size */
+  font-family: Noto Sans;
+  font-weight: bold;
+  font-size: 12px;
   padding: 0px;
-  padding-top: 1px; /* Retained from your original */
-  padding-bottom: 1px; /* Retained from your original */
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
 window#waybar {
-  background-color: #232136; /* Your preferred background color */
+  background-color: #232136;
   padding: 0px;
 }
 
 tooltip {
-  background-color: #2a273f; /* Darker background for tooltip */
-  color: #e0def4; /* Your preferred text color */
+  background-color: #2a273f;
+  color: #e0def4;
   border-radius: 5px;
   padding: 5px 10px;
 }
 
 tooltip label {
-  color: #e0def4; /* Your preferred text color */
+  color: #e0def4;
 }
 
-/* Base styling for ALL active modules */
 #clock,
 #tray,
 #workspaces,
@@ -36,40 +35,37 @@ tooltip label {
 #cpu,
 #memory,
 #hyprland-window {
-  margin: 0 5px; /* Consistent horizontal margin (5px between modules) */
-  padding: 0 2px; /* Small internal horizontal padding for content */
-  color: #e0def4; /* Your default text color */
+  margin: 0 5px;
+  padding: 0 2px;
+  color: #e0def4;
 }
 
-/* --- Workspaces Styling (from your previous config) --- */
 #workspaces button {
   transition-duration: 100ms;
-  all: initial; /* Essential for Waybar button styling */
+  all: initial;
   min-width: 0;
   color: #e0def4;
-  margin-right: 0.2cm; /* Spacing between workspace buttons */
-  margin-left: 0.2cm; /* Spacing between workspace buttons */
+  margin-right: 0.2cm;
+  margin-left: 0.2cm;
 }
 
 #workspaces button.active {
-  color: #eb6f92; /* Active workspace color */
+  color: #eb6f92;
 }
 
 #workspaces button:hover {
   transition-duration: 120ms;
-  color: #9ccfd8; /* Hover color */
+  color: #9ccfd8;
 }
 
 #workspaces button.current_output {
-  color: #e0def4; /* Current output color */
+  color: #e0def4;
 }
 
 #workspaces button.urgent {
-  color: #e78a4e; /* Urgent workspace color */
+  color: #e78a4e;
   text-shadow: 0px 0px 6px #e78a4e;
 }
-
-/* --- Tray Menu Styling (from your original config) --- */
 #tray menu {
   background-color: #232136;
   color: #e0def4;
@@ -87,22 +83,13 @@ tooltip label {
 }
 
 #network.disconnected {
-  background-color: #eb6f92; /* Red for disconnected, using your accent color */
+  background-color: #eb6f92;
   color: #e0def4;
 }
 
-/* No specific #pulseaudio.muted background is set, it will inherit from the general rule. */
-/* If you want a specific muted background: */
-/*
-#pulseaudio.muted {
-    background-color: #555555;
-}
-*/
-
-/* Animation for critical states (example from your old CSS, kept for reference) */
 @keyframes blink {
   to {
-    background-color: #e78a4e; /* Your warning/critical accent color */
-    color: #232136; /* Dark text for contrast */
+    background-color: #e78a4e;
+    color: #232136;
   }
 }
