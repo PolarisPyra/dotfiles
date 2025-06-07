@@ -1,14 +1,8 @@
 {
-  "spacing": 0,
-  "height": 0,
-  "margin-top": 0,
   "position": "top",
-  "margin-right": 0,
-  "margin-left": 0,
-
+  "spacing": 0,
   "modules-left": ["hyprland/workspaces"],
-
-  "modules-right": ["tray", "custom/notification", "pulseaudio", "clock"],
+  "modules-right": ["tray", "pulseaudio", "cpu", "memory", "clock"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -19,46 +13,33 @@
       "DP-5": [6, 7, 8, 9, 10]
     }
   },
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format-muted": "Muted {format_source}",
+    "format-source": "{volume}%",
+    "format-source-muted": "Muted",
+    "on-click": "pavucontrol",
+    "tooltip": true
+  },
 
-  "tray": {
-    "spacing": 10,
-    "tooltip": false
+  "cpu": {
+    "format": "CPU: {usage}%",
+    "tooltip": true
+  },
+
+  "memory": {
+    "format": "RAM: {}%",
+    "tooltip": true
   },
 
   "clock": {
-    "format": "{:%m/%d/%y %I:%M %p}",
-    "tooltip": false
-  },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "<span foreground='#c4a7e7'>󰂞</span>",
-      "none": "󰂚",
-      "dnd-notification": "<span foreground='#c4a7e7'>󰂞</span>",
-      "dnd-none": "󰂛",
-      "inhibited-notification": "<span foreground='#c4a7e7'>󰂞</span>",
-      "inhibited-none": "󰂚",
-      "dnd-inhibited-notification": "<span foreground='#c4a7e7'>󰂞 </span>",
-      "dnd-inhibited-none": "󰂛 "
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip": true
   },
 
-  "pulseaudio": {
-    "scroll-step": 5,
-    "max-volume": 150,
-    "format": "{volume}%",
-    "format-bluetooth": "{volume}%",
-    "format-icons": [" ", " ", "  "],
-    "nospacing": 1,
-    "format-muted": "  ",
-    "on-click": "~/.config/scripts/audio.sh",
-    "tooltip": false
+  "tray": {
+    "spacing": 10,
+    "tooltip": true
   }
 }
