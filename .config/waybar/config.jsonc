@@ -1,0 +1,53 @@
+{
+  "position": "top",
+  "spacing": 0,
+  "modules-left": ["hyprland/workspaces", "mpd"],
+  "modules-right": ["tray", "pulseaudio", "cpu", "memory", "clock"],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false,
+    "persistent-workspaces": {
+      "DP-4": [1, 2, 3, 4, 5],
+      "DP-5": [6, 7, 8, 9, 10]
+    }
+  },
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format-muted": "Muted {format_source}",
+    "format-source": "{volume}%",
+    "format-source-muted": "Muted",
+    "on-click": "pavucontrol",
+    "tooltip": true
+  },
+
+  "mpd": {
+    "format": " {stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} {elapsedTime:%M:%S}/{totalTime:%M:%S}",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "",
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+
+  "cpu": {
+    "format": "CPU: {usage}%",
+    "tooltip": true
+  },
+
+  "memory": {
+    "format": "RAM: {}%",
+    "tooltip": true
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip": true
+  },
+
+  "tray": {
+    "spacing": 10,
+    "tooltip": true
+  }
+}

@@ -1,0 +1,19 @@
+#Typography
+font-family = JetBrains Mono
+font-size = 12
+
+#window 
+window-padding-balance = true
+window-save-state = always
+
+
+#theme
+theme = rose-pine
+background-opacity = 0.9
+
+#keybinds
+keybind = ctrl+shift+k=new_split:up
+keybind = ctrl+shift+j=new_split:down
+keybind = ctrl+shift+l=new_split:right
+keybind = ctrl+shift+h=new_split:left
+keybind = ctrl+shift+t=new_tab

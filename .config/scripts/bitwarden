@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# Source Bitwarden session from secrets
+source "$HOME/secrets/bw_session.sh"
+
+# Check if Bitwarden is unlocked
+if ! bw unlock --check --session "$BW_SESSION" &>/dev/null; then
+    echo "Bitwarden is locked. Please unlock Bitwarden first."
+    exit 1
+fi
+
+# Cache items to avoid multiple API calls
+items_json="$(bw list items --session "$BW_SESSION")"
+
+# List all items with passwords and show in menu
+choice="$(echo "$items_json" | jq -r '.[] | select(.login.password != null) | "\(.name) [\(.login.username)]"' | fuzzel --dmenu --width=100)" || exit 0
+
+# Extract the item name (before the first " [")
+item_name="${choice%% [*}"
+
+# Get the item id
+item_id="$(echo "$items_json" | jq -r --arg name "$item_name" '.[] | select(.name == $name) | .id')"
+
+# Show options for the selected item
+action="$(printf "%s\n" "Copy Username" "Copy Password" | fuzzel --dmenu)" || exit 0
+
+if [ "$action" = "Copy Username" ]; then
+    bw get username "$item_id" --session "$BW_SESSION" | wl-copy
+    notify-send "Username copied to clipboard"
+elif [ "$action" = "Copy Password" ]; then
+    bw get password "$item_id" --session "$BW_SESSION" | wl-copy
+    notify-send "Password copied to clipboard"
+fix

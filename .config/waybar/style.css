@@ -1,0 +1,94 @@
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: Noto Sans;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 0px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+window#waybar {
+  background-color: #232136;
+  padding: 0px;
+}
+
+tooltip {
+  background-color: #2a273f;
+  color: #e0def4;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+tooltip label {
+  color: #e0def4;
+}
+
+#clock,
+#tray,
+#workspaces,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#hyprland-window {
+  margin: 0 5px;
+  padding: 0 2px;
+  color: #e0def4;
+}
+
+#workspaces button {
+  transition-duration: 100ms;
+  all: initial;
+  min-width: 0;
+  color: #e0def4;
+  margin-right: 0.2cm;
+  margin-left: 0.2cm;
+}
+
+#workspaces button.active {
+  color: #eb6f92;
+}
+
+#workspaces button:hover {
+  transition-duration: 120ms;
+  color: #9ccfd8;
+}
+
+#workspaces button.current_output {
+  color: #e0def4;
+}
+
+#workspaces button.urgent {
+  color: #e78a4e;
+  text-shadow: 0px 0px 6px #e78a4e;
+}
+#tray menu {
+  background-color: #232136;
+  color: #e0def4;
+  padding: 4px;
+}
+
+#tray menu menuitem {
+  background-color: #2a273f;
+  margin: 3px;
+  color: rgb(220, 220, 220);
+}
+#tray menu menuitem:hover {
+  background-color: #908caa;
+  color: #232136;
+}
+
+#network.disconnected {
+  background-color: #eb6f92;
+  color: #e0def4;
+}
+
+@keyframes blink {
+  to {
+    background-color: #e78a4e;
+    color: #232136;
+  }
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Select SSH host from ~/.ssh/config
+host=$(grep "^Host " ~/.ssh/config | awk '{print $2}' | fuzzel --dmenu )
+
+# Connect with wezterm
+[ -n "$host" ] && wezterm ssh "$host"

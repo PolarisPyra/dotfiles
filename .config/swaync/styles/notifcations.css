@@ -1,0 +1,150 @@
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ea9a97;
+@define-color pine #3e8fb0;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
+@define-color text #e0def4;
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color base #232136;
+@define-color surface #2a273f;
+@define-color overlay #393552;
+
+* {
+  color: @text;
+  all: unset;
+  font-size: 1rem;
+  font-family: "JetBrains Mono Nerd Font 10";
+  transition: 200ms;
+}
+
+.notification-row {
+  outline: none;
+  margin: 0;
+  padding: 0px;
+}
+
+.floating-notifications.background .notification-row .notification-background {
+  background: @surface;
+  border-radius: 20px;
+  border: none;
+  margin: 0;
+  padding: 8px 8px 0 8px;
+}
+
+.floating-notifications.background
+.notification-row
+.notification-background
+.notification {
+  background-color: @base;
+  border-radius: 16px;
+  margin: 4px;
+}
+
+.floating-notifications.background
+.notification-row
+.notification-background
+.notification.critical {
+  border: 2px solid @love;
+}
+
+.floating-notifications.background
+.notification-row
+.notification-background
+.notification
+.notification-content {
+  margin: 1rem;
+}
+
+.floating-notifications.background
+.notification-row
+.notification-background
+.notification
+> :last-child
+> * {
+  min-height: 3.4em;
+}
+
+.floating-notifications.background
+.notification-row
+.notification-background
+.notification
+> :last-child
+> *
+.notification-action {
+  border-radius: 0.5rem;
+  background-color: @surface;
+  margin: 0.4rem;
+}
+
+.floating-notifications.background
+.notification-row
+.notification-background
+.notification
+> :last-child
+> *
+.notification-action:hover {
+  background-color: @overlay;
+  border: 1px solid @iris;
+}
+
+.floating-notifications.background
+.notification-row
+.notification-background
+.notification
+> :last-child
+> *
+.notification-action:active {
+  background-color: @iris;
+  color: @text;
+}
+
+.image {
+  margin: 10px 20px 10px 0px;
+}
+
+.summary {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.body {
+  font-size: 0.8rem;
+}
+
+.floating-notifications.background
+.notification-row
+.notification-background
+.close-button {
+  background: @base;
+  border-radius: 20px;
+  color: @text;
+  background-color: @surface;
+  margin: 0px;
+  padding: 4px;
+}
+
+.floating-notifications.background
+.notification-row
+.notification-background
+.close-button:hover {
+  background-color: @iris;
+}
+
+.floating-notifications.background
+.notification-row
+.notification-background
+.close-button:active {
+  background-color: @iris;
+  color: @text;
+}
+
+.notification.critical progress {
+  background-color: @iris;
+}
+
+.notification.low progress,
+.notification.normal progress {
+  background-color: @iris;
+}

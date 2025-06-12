@@ -1,0 +1,13 @@
+[mgr]
+prepend_keymap = [
+	{ on = [
+		"<C-y>",
+	], run = [
+		"plugin system-clipboard",
+	] },
+	{ on = [
+		"<C-z>",
+	], run = [
+		"plugin ouch",
+	] },
+]

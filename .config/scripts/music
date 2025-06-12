@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Show options and song list in menu
+choice="$(printf "%s\n" "󰐎 Pause/Play" " Clear Playlist" "$(mpc listall)" | fuzzel --dmenu)" || exit 0
+
+# Handle selection
+if [ "$choice" = "󰐎 Pause/Play" ]; then
+    mpc toggle
+    notify-send "Toggled Play/Pause"
+elif [ "$choice" = " Clear Playlist" ]; then
+    mpc clear
+    notify-send "Cleared Playlist"
+elif [ -n "$choice" ]; then
+    notify-send "Playing $choice"
+    mpc clear
+    mpc add "$choice"
+    mpc play
+fi

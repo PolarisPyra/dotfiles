@@ -1,0 +1,98 @@
+
+[mgr]
+linemode = "size_and_mtime"
+show_hidden = false
+sort_by = "natural"
+mouse_events = []
+
+[preview]
+wrap = "yes"
+max_width = 1500
+max_height = 1500
+
+[input]
+cursor_blink = true
+
+[open]
+rules = [
+	{ name = "*/", use = [
+		"edit",
+		"open",
+		"reveal",
+	] },
+
+	{ mime = "text/*", use = [
+		"edit",
+		"reveal",
+	] },
+	{ mime = "image/*", use = [
+		"open",
+		"reveal",
+	] },
+	{ mime = "video/*", use = [
+		"play",
+		"reveal",
+	] },
+	{ mime = "audio/*", use = [
+		"play",
+		"reveal",
+	] },
+	{ mime = "inode/empty", use = [
+		"edit",
+		"reveal",
+	] },
+
+	{ mime = "application/json", use = [
+		"edit",
+		"reveal",
+	] },
+	{ mime = "*/javascript", use = [
+		"edit",
+		"reveal",
+	] },
+
+	{ mime = "application/zip", use = [
+		"extract",
+		"reveal",
+	] },
+	{ mime = "application/gzip", use = [
+		"extract",
+		"reveal",
+	] },
+	{ mime = "application/r", use = [
+		"extract",
+		"reveal",
+	] },
+	{ mime = "application/bzip", use = [
+		"extract",
+		"reveal",
+	] },
+	{ mime = "application/bzip2", use = [
+		"extract",
+		"reveal",
+	] },
+	{ mime = "application/7z-compressed", use = [
+		"extract",
+		"reveal",
+	] },
+	{ mime = "application/rar", use = [
+		"extract",
+		"reveal",
+	] },
+
+	{ mime = "*", use = [
+		"open",
+		"reveal",
+	] },
+]
+
+
+[opener]
+edit = [{ run = '${EDITOR:=nvim} "$@"', desc = "$EDITOR", block = true }]
+
+play = [{ run = 'mpv --force-window "$@"' }]
+
+extract = [
+	{ run = 'ouch d -y "%*"', desc = "Extract here with ouch", for = "windows" },
+	{ run = 'ouch d -y "$@"', desc = "Extract here with ouch", for = "unix" },
+]
