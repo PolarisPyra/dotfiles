@@ -1,18 +1,67 @@
-#!/usr/bin/env bash
+# Main menu options.
+choice="$(printf "%s\n" \
+    "󰐎 Pause/Play" \
+    " Clear Playlist" \
+    "󰎕 Play Album by Artist" \
+    "󰎔 Play Single Song" \
+    | fuzzel --dmenu)" || exit 0
 
-# Show options and song list in menu
-choice="$(printf "%s\n" "󰐎 Pause/Play" " Clear Playlist" "$(mpc listall)" | fuzzel --dmenu)" || exit 0
-
-# Handle selection
+# Handle the user's selection from the main menu
 if [ "$choice" = "󰐎 Pause/Play" ]; then
     mpc toggle
-    notify-send "Toggled Play/Pause"
+    notify-send "MPD Control" "Toggled Play/Pause"
+
 elif [ "$choice" = " Clear Playlist" ]; then
     mpc clear
-    notify-send "Cleared Playlist"
-elif [ -n "$choice" ]; then
-    notify-send "Playing $choice"
-    mpc clear
-    mpc add "$choice"
-    mpc play
+    notify-send "MPD Control" "Cleared Playlist"
+
+elif [ "$choice" = "󰎕 Play Album by Artist" ]; then
+    # --- Album Artist -> Album Selection Flow ---
+
+    selected_artist="$(mpc list albumartist | fuzzel --dmenu --prompt="Select Album Artist:" | tr -d '\n\r')"
+
+    if [ -n "$selected_artist" ]; then
+        # Step 2: Prompt the user to select an Album by the chosen Artist
+        # Using 'mpc find' to get song paths, then 'awk' to extract the album directory name.
+        selected_album="$(mpc find albumartist "$selected_artist" | awk -F'/' 'NF>=2 {print $(NF-1)}' | sort -u | fuzzel --dmenu --prompt="Select Album by $selected_artist:" | tr -d '\n\r')"
+
+        if [ -n "$selected_album" ]; then
+            notify-send "MPD Control" "Queuing album: \"$selected_album\" by \"$selected_artist\""
+
+            mpc clear # Clear the current playlist
+            
+            # Formulate the path directly using selected artist and album folder names
+            # This relies on your music being organized as MusicRoot/AlbumArtistName/AlbumName/songs
+            album_path="$selected_artist/$selected_album"
+
+            # DEBUG LINE: Output the exact path being used to add the album
+            echo "DEBUG (Queue Album - Directory Add): Path for mpc add: '$album_path'" >> /tmp/mpd_script_debug.log
+
+            # Add the entire album directory to the playlist
+            mpc add "$album_path"
+            mpc play
+        else
+            notify-send "MPD Control" "No album selected for \"$selected_artist\"."
+        fi
+    else
+        notify-send "MPD Control" "No album artist selected."
+    fi
+
+elif [ "$choice" = "󰎔 Play Single Song" ]; then
+    # --- Direct Song Selection from All Songs ---
+
+    selected_song="$(mpc listall | fuzzel --dmenu --prompt="Select Song to Play:" | tr -d '\n\r')"
+
+    if [ -n "$selected_song" ]; then
+        notify-send "MPD Control" "Playing song: \"$selected_song\""
+        
+        # DEBUG LINE (Keep for your own use to verify values)
+        echo "DEBUG (Play Single Song): song_path='$selected_song'" >> /tmp/mpd_script_debug.log
+
+        mpc clear
+        mpc add "$selected_song"
+        mpc play
+    else
+        notify-send "MPD Control" "No song selected."
+    fi
 fi
