@@ -13,12 +13,12 @@ return {
         }
 
         dashboard.section.buttons.val = {
-            dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+            dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
             dashboard.button("f", "󰍉  Find file", ":Telescope find_files<CR>"),
-            dashboard.button("t", "  Browse cwd", ":Neotree toggle<CR>"),
+            dashboard.button("b", "  Browse cwd", ":Neotree toggle<CR>"),
             dashboard.button("c", "  Config", ":e /home/polaris/dotfiles/.config/nvim/<CR>"),
             dashboard.button("m", "󰥻  Mappings", ":e /home/polaris/dotfiles/.config/nvim/lua/config/keymaps.lua<CR>"),
-            dashboard.button("p", "  cozynet", ":e /home/polaris/projects/cozynet<CR>"),
+            dashboard.button("p", "  Cozynet", ":e /home/polaris/projects/cozynet<CR>"),
 
             dashboard.button("q", "󰅙  Quit", ":q!<CR>"),
         }
