@@ -1,0 +1,100 @@
+/* -- Global rules -- */
+* {
+  border: none;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 11px;
+  min-height: 8px;
+}
+
+window#waybar {
+  background: rgba(41, 45, 62, 0.95);
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+/* - General rules for visible modules -- */
+#custom-calendar,
+#clock,
+#pulseaudio,
+#network {
+  color: #eeffff;
+  margin: 4px 4px 6px 4px;
+  padding: 0px 8px;
+  border-radius: 4px;
+  transition: none;
+}
+
+/* -- Specific styles -- */
+#custom-calendar,
+#clock,
+#pulseaudio,
+#network {
+  background: #ffcb6b;
+  color: #292d3e;
+}
+
+/* Modules center */
+#workspaces {
+  background: rgba(50, 55, 76, 0.8);
+  border-radius: 6px;
+  margin: 4px 3px;
+  padding: 1px 0;
+}
+
+#workspaces button {
+  color: #676e95;
+  background: transparent;
+  padding: 0;
+  margin: 2px 4px;
+  min-width: 18px;
+  min-height: 18px;
+  border-radius: 3px;
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+#workspaces button.occupied {
+  color: #bfc7d5;
+}
+
+#workspaces button.active {
+  color: #eeffff;
+  background: rgba(126, 87, 194, 0.3);
+  text-shadow: 0 0 4px #7e57c2;
+}
+
+#workspaces button:hover {
+  color: #82aaff;
+}
+
+/* Modules right */
+#taskbar {
+  background: transparent;
+  border-radius: 3px;
+  margin: 4px 2px;
+}
+
+#taskbar button {
+  padding: 0 3px;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+#taskbar button.active {
+  background: rgba(126, 87, 194, 0.35);
+}
+
+#taskbar button:hover {
+  background: rgba(50, 55, 76, 0.6);
+}
+
+@keyframes blink {
+  to {
+    background-color: #ef5350;
+    color: #ffffff;
+  }
+}

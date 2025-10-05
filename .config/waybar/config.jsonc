@@ -1,0 +1,110 @@
+{
+  // ============================================================================
+  // GENERAL SETTINGS
+  // ============================================================================
+  "layer": "top",
+  "position": "top",
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  // ============================================================================
+  // MODULE LAYOUT
+  // ============================================================================
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  // "modules-center": [
+  //   "hyprland/workspaces"
+  // ],
+  "modules-right": [
+    "wlr/taskbar",
+    "pulseaudio",
+    "network",
+    "custom/calendar",
+    "clock"
+  ],
+  // ============================================================================
+  // CENTER MODULES - WORKSPACES
+  // ============================================================================
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "persistent-workspaces": {
+      "DP-4": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "DP-5": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "sort-by-number": true,
+    "disable-scroll": true,
+    "all-outputs": false,
+    "show-special": true
+  },
+  // ============================================================================
+  // RIGHT MODULES - TASKBAR & SYSTEM TRAY
+  // ============================================================================
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "all-outputs": true,
+    "active-first": false,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "fuzzel"
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 {volume}%",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "pavucontrol",
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%"
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": " ",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
+  "custom/calendar": {
+    "exec": "date '+%d/%m'",
+    "interval": 60,
+    "format": "󰃭 {}",
+    "tooltip": false
+  },
+  "clock": {
+    "format": "󰥔 {:%I:%M}",
+    "timezone": "America/New_York",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "<span color='#f5e0dc'><b>{}</b></span>",
+        "days": "<span color='#cdd6f4'><b>{}</b></span>",
+        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+      }
+    }
+  }
+}
