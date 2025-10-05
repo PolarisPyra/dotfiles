@@ -1,8 +1,12 @@
 return {
-	"lalitmee/cobalt2.nvim",
-	event = { "ColorSchemePre" }, -- if you want to lazy load
-	dependencies = { "tjdevries/colorbuddy.nvim", tag = "v1.0.0" },
-	init = function()
-		require("colorbuddy").colorscheme("cobalt2")
+	"drewtempelmeyer/palenight.vim",
+	lazy = false, -- Load immediately
+	priority = 1000, -- Load before other plugins
+	config = function()
+		-- Optional: Configure palenight settings before loading
+		vim.g.palenight_terminal_italics = 1
+
+		-- Set the colorscheme
+		vim.cmd([[colorscheme palenight]])
 	end,
 }

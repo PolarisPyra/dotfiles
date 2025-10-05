@@ -1,8 +1,53 @@
-theme = Cobalt2
-background-blur = true
+# Pale Night Theme for Ghostty
+# Based on palenight.vim by Drew Tempelmeyer
+
 window-padding-balance = true
 mouse-hide-while-typing = true
 cursor-style-blink = false
 clipboard-read = allow
 clipboard-write = allow
 confirm-close-surface = false
+
+# Background and Foreground
+background = #292d3e
+foreground = #bfc7d5
+
+# Cursor
+cursor-color = #ffcc00
+cursor-text = #292d3e
+
+# Selection
+selection-background = #717cb4
+selection-foreground = #bfc7d5
+
+# Black
+palette = 0=#292d3e
+palette = 8=#434758
+
+# Red
+palette = 1=#f07178
+palette = 9=#ff8b92
+
+# Green
+palette = 2=#c3e88d
+palette = 10=#ddffa7
+
+# Yellow
+palette = 3=#ffcb6b
+palette = 11=#ffe585
+
+# Blue
+palette = 4=#82aaff
+palette = 12=#9cc4ff
+
+# Magenta
+palette = 5=#c792ea
+palette = 13=#e1acff
+
+# Cyan
+palette = 6=#89ddff
+palette = 14=#a3f7ff
+
+# White
+palette = 7=#d0d0d0
+palette = 15=#ffffff
