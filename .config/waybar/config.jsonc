@@ -19,7 +19,7 @@
   //   "hyprland/workspaces"
   // ],
   "modules-right": [
-    "wlr/taskbar",
+    "tray",
     "pulseaudio",
     "network",
     "custom/calendar",
@@ -50,19 +50,12 @@
     "show-special": true
   },
   // ============================================================================
-  // RIGHT MODULES - TASKBAR & SYSTEM TRAY
+  // RIGHT MODULES - SYSTEM TRAY
   // ============================================================================
-  "wlr/taskbar": {
-    "format": "{icon}",
+  "tray": {
     "icon-size": 18,
-    "all-outputs": true,
-    "active-first": false,
-    "tooltip-format": "{name}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": [
-      "fuzzel"
-    ]
+    "spacing": 10,
+    "show-passive-items": true
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -81,9 +74,9 @@
   "network": {
     "format": "{ifname}",
     "format-ethernet": "󰈀 {ifname}",
-    "format-disconnected": " ",
-    "tooltip-format": " {ifname} via {gwaddr}",
-    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
+    "format-disconnected": " ",
+    "tooltip-format": " {ifname} via {gwaddr}",
+    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50
   },

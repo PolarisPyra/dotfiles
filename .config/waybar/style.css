@@ -15,6 +15,7 @@ window#waybar.hidden {
 }
 
 /* - General rules for visible modules -- */
+#tray,
 #custom-calendar,
 #clock,
 #pulseaudio,
@@ -33,6 +34,21 @@ window#waybar.hidden {
 #network {
   background: #ffcb6b;
   color: #292d3e;
+}
+
+/* System Tray */
+#tray {
+  background: rgba(50, 55, 76, 0.8);
+  padding: 0 8px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #ef5350;
 }
 
 /* Modules center */
@@ -69,27 +85,6 @@ window#waybar.hidden {
 
 #workspaces button:hover {
   color: #82aaff;
-}
-
-/* Modules right */
-#taskbar {
-  background: transparent;
-  border-radius: 3px;
-  margin: 4px 2px;
-}
-
-#taskbar button {
-  padding: 0 3px;
-  border-radius: 3px;
-  transition: background 0.3s ease;
-}
-
-#taskbar button.active {
-  background: rgba(126, 87, 194, 0.35);
-}
-
-#taskbar button:hover {
-  background: rgba(50, 55, 76, 0.6);
 }
 
 @keyframes blink {
