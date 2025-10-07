@@ -19,6 +19,7 @@ window#waybar.hidden {
 #custom-calendar,
 #clock,
 #pulseaudio,
+#custom-swaync,
 #network {
   color: #eeffff;
   margin: 4px 4px 6px 4px;
@@ -31,6 +32,7 @@ window#waybar.hidden {
 #custom-calendar,
 #clock,
 #pulseaudio,
+#custom-swaync,
 #network {
   background: #ffcb6b;
   color: #292d3e;
@@ -49,6 +51,21 @@ window#waybar.hidden {
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
   background-color: #ef5350;
+}
+
+/* SwayNC specific styling */
+#custom-swaync {
+  font-weight: 500;
+}
+
+#custom-swaync.notification {
+  background: #ef5350;
+  color: #ffffff;
+}
+
+#custom-swaync.dnd {
+  background: #7e57c2;
+  color: #ffffff;
 }
 
 /* Modules center */
