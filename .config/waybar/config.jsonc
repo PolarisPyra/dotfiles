@@ -21,6 +21,8 @@
   "modules-right": [
     "tray",
     "custom/swaync",
+        "disk",
+
     "pulseaudio",
     "network",
     "custom/calendar",
@@ -57,6 +59,11 @@
     "icon-size": 18,
     "spacing": 10,
     "show-passive-items": true
+  },
+  "disk": {
+  "format": " {free}",
+  "tooltip": true,
+  "tooltip-format": "Free: {free} / Total: {total} ({percentage_free}% free)"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
