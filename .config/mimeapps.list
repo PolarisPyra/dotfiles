@@ -5,3 +5,4 @@ x-scheme-handler/discord=vesktop.desktop
 
 [Added Associations]
 inode/directory=Thunar.desktop
+application/sql=io.dbeaver.DBeaver.desktop;nvim.desktop;
