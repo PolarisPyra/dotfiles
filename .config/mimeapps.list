@@ -2,7 +2,10 @@
 inode/directory=thunar.desktop
 x-scheme-handler/file=thunar.desktop
 x-scheme-handler/discord=vesktop.desktop
+x-scheme-handler/postman=Postman.desktop
+application/x-shellscript=code.desktop
 
 [Added Associations]
 inode/directory=Thunar.desktop
 application/sql=io.dbeaver.DBeaver.desktop;nvim.desktop;
+application/x-shellscript=code.desktop;
