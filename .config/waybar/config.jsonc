@@ -110,7 +110,7 @@
     "max-length": 50
   },
   "custom/calendar": {
-    "exec": "date '+%d/%m'",
+    "exec": "date '+%m/%d/%Y'",
     "interval": 60,
     "format": "󰃭 {}",
     "tooltip": false
