@@ -21,7 +21,7 @@ wall_selection=$(find "${wall_dir}" -type f \( -iname "*.jpg" -o -iname "*.jpeg"
 FPS=120
 TYPE="any"
 DURATION=2
-SWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
+AWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
 
 # full wallpaper path
 wallpaper_path="${wall_dir}/${wall_selection}"
@@ -29,7 +29,7 @@ wallpaper_path="${wall_dir}/${wall_selection}"
 # set wallpaper
 if [[ -n "$wall_selection" ]]; then
 	# set wallpaper for all monitors
-	swww img "${wallpaper_path}" $SWWW_PARAMS
+	awww img "${wallpaper_path}" $AWWW_PARAMS
 
 	# copy the wallpaper in current-wallpaper file
 	mkdir -p "$HOME/.local/share"
