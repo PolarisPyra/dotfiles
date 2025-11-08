@@ -17,11 +17,12 @@ wall_selection=$(find "${wall_dir}" -type f \( -iname "*.jpg" -o -iname "*.jpeg"
     LC_ALL=C sort -V | \
     fuzzel --dmenu --prompt "Wallpaper: " --width 40 --lines 10)
 
-# SWWW Config
+# AWWW Config - Wipe transition example
 FPS=120
-TYPE="any"
+TYPE="wipe"
+ANGLE=30  # 0 = right to left, 90 = top to bottom, 270 = bottom to top
 DURATION=2
-AWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-duration $DURATION"
+AWWW_PARAMS="--transition-fps $FPS --transition-type $TYPE --transition-angle $ANGLE --transition-duration $DURATION"
 
 # full wallpaper path
 wallpaper_path="${wall_dir}/${wall_selection}"
