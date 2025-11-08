@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-r variable
 wall_dir="$HOME/Documents/wallpapers"
 
 # Get focused monitor
