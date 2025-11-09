@@ -1,7 +1,4 @@
 {
-  // ============================================================================
-  // GENERAL SETTINGS
-  // ============================================================================
   "layer": "top",
   "position": "top",
   "autohide": true,
@@ -9,71 +6,42 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  // ============================================================================
-  // MODULE LAYOUT
-  // ============================================================================
-  "modules-left": [
-    "hyprland/workspaces"
-  ],
-  // "modules-center": [
-  //   "hyprland/workspaces"
-  // ],
+  "modules-left": ["hyprland/workspaces"],
   "modules-right": [
     "tray",
     "custom/swaync",
-        "disk",
-
+    "disk",
     "pulseaudio",
     "network",
     "custom/calendar",
     "clock"
   ],
-  // ============================================================================
-  // CENTER MODULES - WORKSPACES
-  // ============================================================================
   "hyprland/workspaces": {
     "format": "{name}",
     "persistent-workspaces": {
-      "DP-4": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "DP-5": [
-        5,
-        6,
-        7,
-        8
-      ]
+      "DP-4": [1, 2, 3, 4],
+      "DP-5": [5, 6, 7, 8]
     },
     "sort-by-number": true,
     "disable-scroll": true,
     "all-outputs": false,
     "show-special": true
   },
-  // ============================================================================
-  // RIGHT MODULES - SYSTEM TRAY
-  // ============================================================================
   "tray": {
     "icon-size": 18,
     "spacing": 10,
     "show-passive-items": true
   },
   "disk": {
-  "format": " {free}",
-  "tooltip": true,
-  "tooltip-format": "Free: {free} / Total: {total} ({percentage_free}% free)"
+    "format": " {free}",
+    "tooltip": true,
+    "tooltip-format": "Free: {free} / Total: {total} ({percentage_free}% free)"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "󰖁 {volume}%",
     "format-icons": {
-      "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
-      ]
+      "default": ["󰕿", "󰖀", "󰕾"]
     },
     "on-click": "pavucontrol",
     "tooltip": true,

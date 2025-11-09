@@ -1,115 +1,120 @@
-/* -- Global rules -- */
 * {
-  border: none;
-  font-family: "JetbrainsMono Nerd Font";
-  font-size: 11px;
-  min-height: 8px;
+    border: none;
+    font-family: "JetbrainsMono Nerd Font";
+    font-size: 11px;
+    min-height: 8px;
 }
 
 window#waybar {
-  background: rgba(41, 45, 62, 0.95);
+    background: #161616;
 }
 
 window#waybar.hidden {
-  opacity: 0.2;
+    opacity: 0.2;
 }
 
-/* - General rules for visible modules -- */
 #disk,
-
 #tray,
 #custom-calendar,
 #clock,
 #pulseaudio,
 #custom-swaync,
 #network {
-  color: #eeffff;
-  margin: 4px 4px 6px 4px;
-  padding: 0px 8px;
-  border-radius: 4px;
-  transition: none;
+    margin: 4px 4px 6px 4px;
+    padding: 0px 10px;
+    border-radius: 4px;
+    transition: none;
 }
 
-/* -- Specific styles -- */
-#disk,
+#disk {
+    background: #3ddbd9;
+    color: #161616;
+    font-weight: 500;
+}
+
 #custom-calendar,
-#clock,
-#pulseaudio,
-#custom-swaync,
-#network {
-  background: #ffcb6b;
-  color: #292d3e;
+#clock {
+    background: #82cfff;
+    color: #161616;
+    font-weight: 500;
 }
 
-/* System Tray */
-#tray {
-  background: rgba(50, 55, 76, 0.8);
-  padding: 0 8px;
+#pulseaudio {
+    background: #be95ff;
+    color: #161616;
+    font-weight: 500;
 }
 
-#tray > .passive {
-  -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: #ef5350;
-}
-
-/* SwayNC specific styling */
 #custom-swaync {
-  font-weight: 500;
+    background: #ff7eb6;
+    color: #161616;
+    font-weight: 600;
 }
 
 #custom-swaync.notification {
-  background: #ef5350;
-  color: #ffffff;
+    background: #ee5396;
+    color: #ffffff;
 }
 
 #custom-swaync.dnd {
-  background: #7e57c2;
-  color: #ffffff;
+    background: #be95ff;
+    color: #161616;
 }
 
-/* Modules center */
+#network {
+    background: #42be65;
+    color: #161616;
+    font-weight: 500;
+}
+
+#tray {
+    background: #262626;
+    padding: 0 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #ee5396;
+}
+
 #workspaces {
-  background: rgba(50, 55, 76, 0.8);
-  border-radius: 6px;
-  margin: 4px 3px;
-  padding: 1px 0;
+    background: #262626;
+    color: #dde1e6;
+    border-radius: 4px;
+    margin: 4px 3px;
+    padding: 1px 0;
 }
 
 #workspaces button {
-  color: #676e95;
-  background: transparent;
-  padding: 0;
-  margin: 2px 4px;
-  min-width: 18px;
-  min-height: 18px;
-  border-radius: 3px;
-  transition:
-    color 0.2s ease,
-    text-shadow 0.2s ease,
-    transform 0.2s ease;
-}
-
-#workspaces button.occupied {
-  color: #bfc7d5;
-}
-
-#workspaces button.active {
-  color: #eeffff;
-  background: rgba(126, 87, 194, 0.3);
-  text-shadow: 0 0 4px #7e57c2;
+    color: #dde1e6;
+    background: transparent;
+    padding: 0;
+    margin: 2px 4px;
+    min-width: 18px;
+    min-height: 18px;
+    border-radius: 3px;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 #workspaces button:hover {
-  color: #82aaff;
+    background: #393939;
+    color: #ffffff;
 }
 
-@keyframes blink {
-  to {
-    background-color: #ef5350;
+#workspaces button.active {
+    color: #161616;
+    background: #08bdba;
+    font-weight: 600;
+}
+
+#workspaces button.urgent {
+    background: #ee5396;
     color: #ffffff;
-  }
 }
