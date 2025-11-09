@@ -2,6 +2,8 @@ export EDITOR=nvim
 export TERM=xterm-256color
 #If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+alias zed="zeditor"
+
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
