@@ -2,23 +2,18 @@
 
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
 
-readonly -a GENERAL=(
-    "stow"
-
-)
-
 readonly -a DEVELOPER=(
     "neovim"
     "zed"
     "git"
     "base-devel"
+    "stow"
 )
 
-readonly -a DESKTOP=(
+readonly -a THEMING=(
     "bibata-cursor-theme"
     "awww-git"
-
-)
+  )
 
 readonly -a GAMING=(
     "steam"
@@ -132,9 +127,8 @@ main() {
         echo ":: yay is already installed"
     fi
 
-    install_packages "General" "${GENERAL[@]}"
     install_packages "Developer" "${DEVELOPER[@]}"
-    install_packages "Desktop" "${DESKTOP[@]}"
+    install_packages "Theming" "${THEMING[@]}"
     install_packages "Gaming" "${GAMING[@]}"
     install_packages "Apps" "${APPS[@]}"
 
