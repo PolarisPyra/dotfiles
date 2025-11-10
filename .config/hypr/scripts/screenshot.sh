@@ -16,4 +16,3 @@ case "$SELECTION" in
         hyprshot -m output -o "$SCREENSHOT_DIR"
         ;;
 esac
-
