@@ -14,38 +14,38 @@
     "pulseaudio",
     "network",
     "custom/calendar",
-    "clock"
+    "clock",
   ],
   "hyprland/workspaces": {
     "format": "{name}",
     "persistent-workspaces": {
       "DP-4": [1, 2, 3, 4],
-      "DP-5": [5, 6, 7, 8]
+      "DP-5": [5, 6, 7, 8],
     },
     "sort-by-number": true,
     "disable-scroll": true,
     "all-outputs": false,
-    "show-special": true
+    "show-special": true,
   },
   "tray": {
     "icon-size": 18,
     "spacing": 10,
-    "show-passive-items": true
+    "show-passive-items": true,
   },
   "disk": {
-    "format": " {free}",
+    "format": " {free}",
     "tooltip": true,
-    "tooltip-format": "Free: {free} / Total: {total} ({percentage_free}% free)"
+    "tooltip-format": "Free: {free} / Total: {total} ({percentage_free}% free)",
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "󰖁 {volume}%",
     "format-icons": {
-      "default": ["󰕿", "󰖀", "󰕾"]
+      "default": ["󰕿", "󰖀", "󰕾"],
     },
     "on-click": "pavucontrol",
     "tooltip": true,
-    "tooltip-format": "Volume: {volume}%"
+    "tooltip-format": "Volume: {volume}%",
   },
   "custom/swaync": {
     "tooltip": true,
@@ -59,14 +59,14 @@
       "inhibited-notification": "󰂚",
       "inhibited-none": "󰂜",
       "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑"
+      "dnd-inhibited-none": "󰪑",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true
+    "escape": true,
   },
   "network": {
     "format": "{ifname}",
@@ -75,13 +75,13 @@
     "tooltip-format": " {ifname} via {gwaddr}",
     "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
     "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50
+    "max-length": 50,
   },
   "custom/calendar": {
     "exec": "date '+%m/%d/%Y'",
     "interval": 60,
     "format": "󰃭 {}",
-    "tooltip": false
+    "tooltip": false,
   },
   "clock": {
     "format": "󰥔 {:%I:%M}",
@@ -93,8 +93,8 @@
         "months": "<span color='#f5e0dc'><b>{}</b></span>",
         "days": "<span color='#cdd6f4'><b>{}</b></span>",
         "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
-      }
-    }
-  }
+        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>",
+      },
+    },
+  },
 }
