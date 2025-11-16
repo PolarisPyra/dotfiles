@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-readonly -a DEVELOPER=(
+readonly -a SYSTEM=(
     "neovim"
-    "zed"
     "git"
+    "visual-studio-code-bin"
     "base-devel"
     "stow"
+    "openscad-thumbnailers"
+    "ffmpegthumbnailer"
+    "nemo"
 )
 readonly -a THEMING=(
     "bibata-cursor-theme"
@@ -68,13 +71,13 @@ main() {
         fi
         any_installed=true
     fi
-    for pkg in "${DEVELOPER[@]}" "${THEMING[@]}" "${GAMING[@]}" "${APPS[@]}"; do
+    for pkg in "${SYSTEM[@]}" "${THEMING[@]}" "${GAMING[@]}" "${APPS[@]}"; do
         if ! is_installed "${pkg}"; then
             any_installed=true
             break
         fi
     done
-    install_packages "${DEVELOPER[@]}"
+    install_packages "${SYSTEM[@]}"
     install_packages "${THEMING[@]}"
     install_packages "${GAMING[@]}"
     install_packages "${APPS[@]}"
