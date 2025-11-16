@@ -6,9 +6,18 @@ readonly -a SYSTEM=(
     "visual-studio-code-bin"
     "base-devel"
     "stow"
+    "nemo"
+)
+readonly -a THUMBNAIL=(
     "openscad-thumbnailers"
     "ffmpegthumbnailer"
-    "nemo"
+    "webp-pixbuf-loader"
+    "freetype2"
+    "evince"
+    "poppler-glib"
+    "gnome-epub-thumbnailer"
+    "libgsf"
+    "f3d"
 )
 readonly -a THEMING=(
     "bibata-cursor-theme"
@@ -71,13 +80,14 @@ main() {
         fi
         any_installed=true
     fi
-    for pkg in "${SYSTEM[@]}" "${THEMING[@]}" "${GAMING[@]}" "${APPS[@]}"; do
+    for pkg in "${SYSTEM[@]}" "${THUMBNAIL[@]}" "${THEMING[@]}" "${GAMING[@]}" "${APPS[@]}"; do
         if ! is_installed "${pkg}"; then
             any_installed=true
             break
         fi
     done
     install_packages "${SYSTEM[@]}"
+    install_packages "${THUMBNAIL[@]}"
     install_packages "${THEMING[@]}"
     install_packages "${GAMING[@]}"
     install_packages "${APPS[@]}"
