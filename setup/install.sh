@@ -32,6 +32,7 @@ readonly -a APPS=(
     "ghostty"
     "helium-browser-bin"
     "vesktop"
+    "swaync"
 )
 is_installed() {
     local package="$1"
