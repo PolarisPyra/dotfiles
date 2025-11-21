@@ -12,7 +12,6 @@
     "custom/swaync",
     "disk",
     "pulseaudio",
-    "network",
     "custom/calendar",
     "clock",
   ],
@@ -67,15 +66,6 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true,
-  },
-  "network": {
-    "format": "{ifname}",
-    "format-ethernet": "󰈀 {ifname}",
-    "format-disconnected": " ",
-    "tooltip-format": " {ifname} via {gwaddr}",
-    "tooltip-format-ethernet": " {ifname} {ipaddr}/{cidr}",
-    "tooltip-format-disconnected": "Disconnected",
-    "max-length": 50,
   },
   "custom/calendar": {
     "exec": "date '+%m/%d/%Y'",

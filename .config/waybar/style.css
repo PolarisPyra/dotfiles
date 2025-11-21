@@ -7,69 +7,45 @@
 
 window#waybar {
     background: #161616;
+    color: #f2f4f8;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
 }
 
+/* Common module styles - single consistent color */
 #disk,
-#tray,
 #custom-calendar,
 #clock,
 #pulseaudio,
-#custom-swaync,
-#network {
+#custom-swaync {
     margin: 4px 4px 6px 4px;
     padding: 0px 10px;
     border-radius: 4px;
     transition: none;
-}
-
-#disk {
-    background: #3ddbd9;
-    color: #161616;
+    background: #262626;
+    color: #ffffff;
     font-weight: 500;
 }
 
-#custom-calendar,
-#clock {
-    background: #82cfff;
-    color: #161616;
-    font-weight: 500;
-}
-
-#pulseaudio {
-    background: #be95ff;
-    color: #161616;
-    font-weight: 500;
-}
-
+/* SwayNC specific overrides */
 #custom-swaync {
-    background: #ff7eb6;
-    color: #161616;
     font-weight: 600;
 }
 
 #custom-swaync.notification {
-    background: #ee5396;
     color: #ffffff;
 }
 
-#custom-swaync.dnd {
-    background: #be95ff;
-    color: #161616;
-}
-
-#network {
-    background: #42be65;
-    color: #161616;
-    font-weight: 500;
-}
-
+/* Tray with custom padding */
 #tray {
-    background: #262626;
+    margin: 4px 4px 6px 4px;
     padding: 0 8px;
+    border-radius: 4px;
+    transition: none;
+    background: #262626;
+    color: #ffffff;
 }
 
 #tray > .passive {
@@ -78,7 +54,7 @@ window#waybar.hidden {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #ee5396;
+    background-color: #08bdba;
 }
 
 #workspaces {
@@ -105,7 +81,7 @@ window#waybar.hidden {
 
 #workspaces button:hover {
     background: #393939;
-    color: #ffffff;
+    color: #f2f4f8;
 }
 
 #workspaces button.active {
