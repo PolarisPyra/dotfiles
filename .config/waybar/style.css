@@ -34,7 +34,9 @@ window#waybar.hidden {
     font-weight: 600;
 }
 
+/* Change background color when notifications are active */
 #custom-swaync.notification {
+    background: #393939;
     color: #ffffff;
 }
 
